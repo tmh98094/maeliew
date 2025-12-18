@@ -63,19 +63,19 @@ export const CuratedCollectionManager: React.FC = () => {
             id: 'wedding-collection',
             name: 'Wedding Collection',
             category: 'wedding',
-            images: ["/public/images/portfolio/wd.jpeg", "/public/images/portfolio/wd1.jpeg", "/public/images/portfolio/wd2.jpeg"]
+            images: ["/images/portfolio/wd.jpeg", "/images/portfolio/wd1.jpeg", "/images/portfolio/wd2.jpeg"]
           },
           {
             id: 'rom-collection',
             name: 'ROM Collection',
             category: 'rom',
-            images: ["/public/images/portfolio/rom1.jpeg", "/public/images/portfolio/rom3.jpeg", "/public/images/portfolio/rom2.jpeg"]
+            images: ["/images/portfolio/rom1.jpeg", "/images/portfolio/rom3.jpeg", "/images/portfolio/rom2.jpeg"]
           },
           {
             id: 'celebrity-collection',
             name: 'Celebrity Collection',
             category: 'celebrity',
-            images: ["/public/images/about/ceb1.png", "/public/images/about/ceb2.png", "/public/images/about/ceb3.png"]
+            images: ["/images/about/ceb1.png", "/images/about/ceb2.png", "/images/about/ceb3.png"]
           }
         ];
         setCollections(defaultCollections);
@@ -240,7 +240,7 @@ export const CuratedCollectionManager: React.FC = () => {
                           alt={`${category.label} ${index + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/public/images/placeholder.jpg';
+                            (e.target as HTMLImageElement).src = '/images/placeholder.jpg';
                           }}
                         />
                       </div>

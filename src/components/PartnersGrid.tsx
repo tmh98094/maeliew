@@ -54,7 +54,7 @@ export const PartnersGrid: React.FC<PartnersGridProps> = ({
             {
               id: 'partner-fallback-1',
               title: 'MAC Cosmetics',
-              file_path: '/public/images/featured/MAC-Cosmetics-logo.png',
+              file_path: '/images/featured/MAC-Cosmetics-logo.png',
               alt_text: 'MAC Cosmetics logo',
               type: 'partner' as const,
               status: 'published' as const,
@@ -66,7 +66,7 @@ export const PartnersGrid: React.FC<PartnersGridProps> = ({
             {
               id: 'partner-fallback-2',
               title: 'Shu Uemura',
-              file_path: '/public/images/featured/shu-uemura-logo.png',
+              file_path: '/images/featured/shu-uemura-logo.png',
               alt_text: 'Shu Uemura logo',
               type: 'partner' as const,
               status: 'published' as const,
@@ -78,7 +78,7 @@ export const PartnersGrid: React.FC<PartnersGridProps> = ({
             {
               id: 'partner-fallback-3',
               title: 'RecommendMy',
-              file_path: '/public/images/featured/recommendmy.svg',
+              file_path: '/images/featured/recommendmy.svg',
               alt_text: 'RecommendMy logo',
               type: 'partner' as const,
               status: 'published' as const,

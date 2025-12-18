@@ -63,7 +63,7 @@ async function testFeaturedContent() {
       console.log('\n💡 Next steps:');
       console.log('   1. Go to admin panel: http://localhost:3000/#/admin');
       console.log('   2. Click "Featured On" tab');
-      console.log('   3. Upload publication logos from /public/images/featured/');
+      console.log('   3. Upload publication logos from /images/featured/');
       console.log('   4. They will appear on About page automatically');
     }
 

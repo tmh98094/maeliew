@@ -16,15 +16,15 @@ const sampleCaseStudies: CaseStudy[] = [
     solution: 'Used long-wearing, photography-friendly products with a focus on enhancing natural features. Applied strategic highlighting for dimension in photos.',
     results: 'The bride looked radiant throughout the entire day. Photos captured beautiful, natural-looking makeup that enhanced rather than masked her features.',
     images: {
-      before: ['/public/images/portfolio/bridal-before-1.jpg'],
+      before: ['/images/portfolio/bridal-before-1.jpg'],
       after: [
-        '/public/images/portfolio/bridal-after-1.jpg',
-        '/public/images/portfolio/bridal-after-2.jpg',
-        '/public/images/portfolio/bridal-after-3.jpg'
+        '/images/portfolio/bridal-after-1.jpg',
+        '/images/portfolio/bridal-after-2.jpg',
+        '/images/portfolio/bridal-after-3.jpg'
       ],
       process: [
-        '/public/images/portfolio/bridal-process-1.jpg',
-        '/public/images/portfolio/bridal-process-2.jpg'
+        '/images/portfolio/bridal-process-1.jpg',
+        '/images/portfolio/bridal-process-2.jpg'
       ]
     },
     techniques: ['Airbrush foundation', 'Strategic contouring', 'Waterproof formulas', 'Color correction'],
@@ -52,13 +52,13 @@ const sampleCaseStudies: CaseStudy[] = [
     results: 'The editorial was featured as a cover story, with the makeup being highlighted as a key artistic element. The shoot won a regional photography award.',
     images: {
       after: [
-        '/public/images/portfolio/editorial-1.jpg',
-        '/public/images/portfolio/editorial-2.jpg',
-        '/public/images/portfolio/editorial-3.jpg'
+        '/images/portfolio/editorial-1.jpg',
+        '/images/portfolio/editorial-2.jpg',
+        '/images/portfolio/editorial-3.jpg'
       ],
       process: [
-        '/public/images/portfolio/editorial-process-1.jpg',
-        '/public/images/portfolio/editorial-process-2.jpg'
+        '/images/portfolio/editorial-process-1.jpg',
+        '/images/portfolio/editorial-process-2.jpg'
       ]
     },
     techniques: ['Geometric design', 'Metallic application', 'Color blocking', 'Precision lining'],

@@ -76,7 +76,7 @@ export async function migrateExistingImages() {
         description: `Image from ${image.category} category`,
         type: 'image' as const,
         status: 'published' as const,
-        file_path: `/public/images/${image.category}/${image.filename}`,
+        file_path: `/images/${image.category}/${image.filename}`,
         file_name: image.filename,
         mime_type: image.filename.toLowerCase().endsWith('.jpg') || image.filename.toLowerCase().endsWith('.jpeg') 
           ? 'image/jpeg' 

@@ -46,8 +46,8 @@ export const services: ServiceDetail[] = [
       ]
     },
     images: [
-      '/public/images/services/bridal-1.jpg',
-      '/public/images/services/bridal-2.jpg'
+      '/images/services/bridal-1.jpg',
+      '/images/services/bridal-2.jpg'
     ],
     faqs: [
       {

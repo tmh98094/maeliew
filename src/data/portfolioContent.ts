@@ -8,13 +8,13 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'outdoor-wedding',
     description: 'Soft, romantic bridal makeup perfect for an outdoor garden ceremony. Natural glowing skin with subtle enhancement of features.',
     images: {
-      thumbnail: '/public/images/portfolio/bridal-thumb-1.jpg',
+      thumbnail: '/images/portfolio/bridal-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/bridal-1.jpg',
-        '/public/images/portfolio/bridal-2.jpg',
-        '/public/images/portfolio/bridal-3.jpg'
+        '/images/portfolio/bridal-1.jpg',
+        '/images/portfolio/bridal-2.jpg',
+        '/images/portfolio/bridal-3.jpg'
       ],
-      featured: '/public/images/portfolio/bridal-featured-1.jpg'
+      featured: '/images/portfolio/bridal-featured-1.jpg'
     },
     techniques: ['Airbrush foundation', 'Natural contouring', 'Waterproof formulas'],
     products: ['Giorgio Armani Luminous Silk', 'Charlotte Tilbury Pillow Talk'],
@@ -30,13 +30,13 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'fashion-magazine',
     description: 'Bold, avant-garde makeup featuring geometric shapes and metallic accents for a high-fashion editorial spread.',
     images: {
-      thumbnail: '/public/images/portfolio/editorial-thumb-1.jpg',
+      thumbnail: '/images/portfolio/editorial-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/editorial-1.jpg',
-        '/public/images/portfolio/editorial-2.jpg',
-        '/public/images/portfolio/editorial-3.jpg'
+        '/images/portfolio/editorial-1.jpg',
+        '/images/portfolio/editorial-2.jpg',
+        '/images/portfolio/editorial-3.jpg'
       ],
-      featured: '/public/images/portfolio/editorial-featured-1.jpg'
+      featured: '/images/portfolio/editorial-featured-1.jpg'
     },
     techniques: ['Geometric design', 'Metallic application', 'Color blocking'],
     products: ['Make Up For Ever Artist Color', 'Pat McGrath Labs Metallics'],
@@ -52,12 +52,12 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'corporate',
     description: 'Professional, polished makeup for corporate headshots that convey confidence and approachability.',
     images: {
-      thumbnail: '/public/images/portfolio/commercial-thumb-1.jpg',
+      thumbnail: '/images/portfolio/commercial-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/commercial-1.jpg',
-        '/public/images/portfolio/commercial-2.jpg'
+        '/images/portfolio/commercial-1.jpg',
+        '/images/portfolio/commercial-2.jpg'
       ],
-      featured: '/public/images/portfolio/commercial-featured-1.jpg'
+      featured: '/images/portfolio/commercial-featured-1.jpg'
     },
     techniques: ['HD makeup', 'Color correction', 'Professional lighting'],
     products: ['Make Up For Ever HD Foundation', 'NARS Concealer'],
@@ -72,12 +72,12 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'special-occasion',
     description: 'Sophisticated evening makeup with dramatic eyes and flawless complexion for a gala event.',
     images: {
-      thumbnail: '/public/images/portfolio/personal-thumb-1.jpg',
+      thumbnail: '/images/portfolio/personal-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/personal-1.jpg',
-        '/public/images/portfolio/personal-2.jpg'
+        '/images/portfolio/personal-1.jpg',
+        '/images/portfolio/personal-2.jpg'
       ],
-      featured: '/public/images/portfolio/personal-featured-1.jpg'
+      featured: '/images/portfolio/personal-featured-1.jpg'
     },
     techniques: ['Smoky eyes', 'Highlighting', 'Long-wear formulas'],
     products: ['Tom Ford Eye Color Quad', 'Fenty Beauty Highlighter'],
@@ -92,13 +92,13 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'beauty-editorial',
     description: 'Clean, natural beauty look focusing on healthy, glowing skin and subtle enhancement.',
     images: {
-      thumbnail: '/public/images/portfolio/natural-thumb-1.jpg',
+      thumbnail: '/images/portfolio/natural-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/natural-1.jpg',
-        '/public/images/portfolio/natural-2.jpg',
-        '/public/images/portfolio/natural-3.jpg'
+        '/images/portfolio/natural-1.jpg',
+        '/images/portfolio/natural-2.jpg',
+        '/images/portfolio/natural-3.jpg'
       ],
-      featured: '/public/images/portfolio/natural-featured-1.jpg'
+      featured: '/images/portfolio/natural-featured-1.jpg'
     },
     techniques: ['Skin prep', 'Minimal coverage', 'Natural enhancement'],
     products: ['Glossier Cloud Paint', 'RMS Beauty Living Luminizer'],
@@ -113,12 +113,12 @@ export const portfolioItems: PortfolioItem[] = [
     subcategory: 'vintage-inspired',
     description: 'Classic Hollywood glamour inspired bridal look with winged eyeliner and red lips.',
     images: {
-      thumbnail: '/public/images/portfolio/vintage-thumb-1.jpg',
+      thumbnail: '/images/portfolio/vintage-thumb-1.jpg',
       gallery: [
-        '/public/images/portfolio/vintage-1.jpg',
-        '/public/images/portfolio/vintage-2.jpg'
+        '/images/portfolio/vintage-1.jpg',
+        '/images/portfolio/vintage-2.jpg'
       ],
-      featured: '/public/images/portfolio/vintage-featured-1.jpg'
+      featured: '/images/portfolio/vintage-featured-1.jpg'
     },
     techniques: ['Winged eyeliner', 'Classic contouring', 'Bold lips'],
     products: ['MAC Ruby Woo', 'Stila Stay All Day Liner'],

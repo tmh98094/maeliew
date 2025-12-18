@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import EnhancedNavbar from './src/components/EnhancedNavbar';
 import Footer from './components/Footer';
@@ -32,7 +32,7 @@ const AppContent: React.FC = () => {
 
   // Show loading screen on every home page load/refresh
   useEffect(() => {
-    const isHomePage = location.pathname === '/' || location.pathname === '' || location.pathname === '/#/';
+    const isHomePage = location.pathname === '/' || location.pathname === '';
     
     if (isHomePage) {
       setLoading(true);

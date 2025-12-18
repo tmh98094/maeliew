@@ -171,7 +171,7 @@ export const ContentManager: React.FC = () => {
                 value={newContent.file_path}
                 onChange={(e) => setNewContent({ ...newContent, file_path: e.target.value })}
                 className="w-full p-2 border rounded"
-                placeholder="/public/images/..."
+                placeholder="/images/..."
               />
             </div>
 
