@@ -1,0 +1,40 @@
+{
+  "name": "mae-liew-atelier",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "db:push": "supabase db push",
+    "db:pull": "supabase db pull",
+    "db:reset": "supabase db reset",
+    "types:generate": "supabase gen types typescript --linked > src/types/database.types.ts",
+    "crm:seed": "tsx scripts/seedCRMData.ts",
+    "crm:migrate": "tsx scripts/migrateExistingImages.ts",
+    "services:migrate": "tsx scripts/migrateServicesData.ts",
+    "test:admin": "tsx scripts/testAdminPanel.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.3",
+    "dotenv": "^17.2.3",
+    "framer-motion": "^11.11.17",
+    "lucide-react": "^0.561.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.17",
+    "tsx": "^4.21.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.11"
+  }
+}

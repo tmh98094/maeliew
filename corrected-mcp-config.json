@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "Context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp", "--api-key", "YOUR_API_KEY"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": ["resolve-library-id", "get-library-docs"]
+    },
+    "Augment-Context-Engine": {
+      "command": "auggie",
+      "args": ["--mcp", "-m", "default", "-w", "./"],
+      "disabled": false,
+      "autoApprove": ["codebase-retrieval"]
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"],
+      "env": {},
+      "disabled": false,
+      "autoApprove": []
+    }
+  },
+  "powers": {
+    "mcpServers": {
+      "power-supabase-hosted-supabase": {
+        "url": "https://mcp.supabase.com/mcp",
+        "disabled": false,
+        "autoApprove": ["list_tables", "execute_sql"]
+      }
+    }
+  }
+}

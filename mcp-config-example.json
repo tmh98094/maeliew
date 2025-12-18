@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "context7": {
+      "command": "uvx",
+      "args": ["context7-mcp"],
+      "disabled": false,
+      "autoApprove": []
+    },
+    "augment-context-engine": {
+      "command": "uvx", 
+      "args": ["augment-context-engine-mcp"],
+      "disabled": false,
+      "autoApprove": []
+    }
+  }
+}

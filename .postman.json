@@ -1,0 +1,22 @@
+{
+  "workspace": {
+    "id": "c0fb1b4e-2f3a-4fac-8a42-eafe3b028404",
+    "name": "Terry Tan's Workspace"
+  },
+  "collection": {
+    "id": "50894261-94f9e71a-8e5c-41a4-a0f5-10102e79f7d3",
+    "name": "Mae Liew Atelier API Tests",
+    "uid": "50894261-94f9e71a-8e5c-41a4-a0f5-10102e79f7d3"
+  },
+  "environment": {
+    "id": "50894261-155d0f48-d4db-4317-93a2-c23924b42338",
+    "name": "Mae Liew Atelier - Local",
+    "uid": "50894261-155d0f48-d4db-4317-93a2-c23924b42338"
+  },
+  "setup_instructions": {
+    "1": "Update environment variables in Postman with your actual Supabase URL and anon key",
+    "2": "Start your development server: npm run dev",
+    "3": "Run the collection to test your API endpoints",
+    "4": "The hook will automatically run tests when you modify code files"
+  }
+}
