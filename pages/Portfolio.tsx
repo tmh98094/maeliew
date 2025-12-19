@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { LazyComponent } from '../src/components/PerformanceOptimizer';
 import { SmoothPageTransition } from '../src/components/AdvancedUIComponents';
 import { CRMService } from '../src/services/crmService';
 import { Content, Category } from '../src/lib/supabase';
+import { X } from 'lucide-react';
 
 const Portfolio: React.FC = () => {
   const [portfolioContent, setPortfolioContent] = useState<Content[]>([]);
@@ -12,6 +13,7 @@ const Portfolio: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [loading, setLoading] = useState(true);
+  const [selectedImage, setSelectedImage] = useState<Content | null>(null);
 
   useEffect(() => {
     const loadPortfolio = async () => {
@@ -109,35 +111,67 @@ const Portfolio: React.FC = () => {
           </div>
         ) : (
           <>
-            {/* Portfolio Grid from Supabase - Fixed Size Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16">
+            {/* Portfolio Grid - Smaller on mobile, click to expand */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 md:gap-4 mb-16">
               {filteredContent.map((item, index) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="relative group overflow-hidden cursor-pointer rounded-lg bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+                  transition={{ delay: Math.min(index * 0.05, 0.5) }}
+                  className="relative group overflow-hidden cursor-pointer bg-white shadow-sm hover:shadow-lg transition-all duration-300"
+                  onClick={() => setSelectedImage(item)}
                 >
-                  {/* Fixed aspect ratio container */}
-                  <div className="aspect-[3/4] overflow-hidden">
+                  {/* Fixed aspect ratio container - smaller on mobile */}
+                  <div className="aspect-square overflow-hidden">
                     <img 
                       src={item.file_path} 
                       alt={item.alt_text || item.title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
-                        // Fallback for broken images
-                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x533?text=Image+Not+Found';
+                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x400?text=Image+Not+Found';
                       }}
                     />
                   </div>
                   
-                  {/* Subtle hover effect only */}
-                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Subtle hover effect */}
+                  <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">View</span>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            {/* Lightbox Modal */}
+            <AnimatePresence>
+              {selectedImage && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4"
+                  onClick={() => setSelectedImage(null)}
+                >
+                  <button
+                    className="absolute top-4 right-4 text-white/80 hover:text-white z-50 p-2"
+                    onClick={() => setSelectedImage(null)}
+                  >
+                    <X size={32} />
+                  </button>
+                  
+                  <motion.img
+                    initial={{ scale: 0.9, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.9, opacity: 0 }}
+                    src={selectedImage.file_path}
+                    alt={selectedImage.alt_text || selectedImage.title}
+                    className="max-w-full max-h-[90vh] object-contain"
+                    onClick={(e) => e.stopPropagation()}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </>
         )}
       </div>
