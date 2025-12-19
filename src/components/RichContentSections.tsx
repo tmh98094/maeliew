@@ -155,12 +155,7 @@ export const EnhancedTestimonials: React.FC = () => {
                       </div>
                     )}
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">
-                    {new Date(testimonial.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long'
-                    })}
-                  </p>
+
                 </div>
               </motion.div>
             </AnimationWrapper>
