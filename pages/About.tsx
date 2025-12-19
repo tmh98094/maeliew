@@ -11,7 +11,7 @@ const About: React.FC = () => {
       {/* Header Image */}
       <div className="h-[70vh] w-full relative overflow-hidden">
         <img 
-          src="https://picsum.photos/1920/800?grayscale" 
+          src="/images/portfolio/wd1.jpeg" 
           alt="Studio header" 
           className="w-full h-full object-cover object-center"
         />

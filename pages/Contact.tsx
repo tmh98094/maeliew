@@ -48,7 +48,7 @@ const Contact: React.FC = () => {
         </div>
 
         <div className="mt-24 w-full h-80 overflow-hidden relative grayscale">
-          <img src="https://picsum.photos/1200/400?random=map" alt="Aesthetic Location" className="w-full h-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1676132068623-18f6f45de4be?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Aesthetic Location" className="w-full h-full object-cover" />
           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
              <span className="text-white font-serif text-3xl">Visit the Atelier</span>
           </div>
