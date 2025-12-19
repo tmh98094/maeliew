@@ -201,14 +201,14 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       </div>
 
       {imagesLoaded && (
-        <div className="absolute bottom-4 left-4 md:bottom-10 md:left-6 z-50">
+        <div className="absolute bottom-4 left-4 right-4 md:bottom-10 md:left-6 md:right-auto z-50">
            {/* Background for better text visibility */}
-           <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-lg border-l-4 border-[#E63946] shadow-xl">
-             <h1 className="text-3xl md:text-5xl lg:text-8xl font-serif tracking-tighter text-gray-900 mb-2 md:mb-4">
+           <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-lg border-l-4 border-[#E63946] shadow-xl max-w-sm md:max-w-none">
+             <h1 className="text-2xl md:text-5xl lg:text-8xl font-serif tracking-tighter text-gray-900 mb-2 md:mb-4">
                 MAE LIEW
              </h1>
              <div className="h-[2px] bg-[#E63946] my-2 md:my-4"></div>
-             <div className="flex justify-between text-xs tracking-[0.4em] uppercase font-bold text-gray-700">
+             <div className="flex justify-between items-center text-xs tracking-[0.3em] md:tracking-[0.4em] uppercase font-bold text-gray-700 min-w-[200px]">
                 <span>Atelier</span>
                 <span>Est. 2008</span>
              </div>
