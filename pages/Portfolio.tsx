@@ -27,11 +27,15 @@ const Portfolio: React.FC = () => {
           }),
           CRMService.getAllCategories()
         ]);
-        setPortfolioContent(content);
-        setFilteredContent(content);
-        setCategories(cats);
+        setPortfolioContent(content || []);
+        setFilteredContent(content || []);
+        setCategories(cats || []);
       } catch (error) {
         console.error('Error loading portfolio:', error);
+        // Set empty arrays on error to prevent crashes
+        setPortfolioContent([]);
+        setFilteredContent([]);
+        setCategories([]);
       } finally {
         setLoading(false);
       }
