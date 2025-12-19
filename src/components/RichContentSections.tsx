@@ -92,6 +92,16 @@ export const EnhancedTimeline: React.FC = () => {
 
 // Enhanced Testimonials Section
 export const EnhancedTestimonials: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="container-max section-padding">
@@ -105,7 +115,103 @@ export const EnhancedTestimonials: React.FC = () => {
           </div>
         </AnimationWrapper>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile: Swipeable Carousel */}
+        <div className="md:hidden">
+          <div className="relative overflow-hidden">
+            <div 
+              className="flex transition-transform duration-300 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className="w-full flex-shrink-0 px-2"
+                >
+                  <div className="bg-white p-6 rounded-lg shadow-sm h-full flex flex-col">
+                    {/* Quote icon */}
+                    <div className="text-gray-300 mb-4">
+                      <Quote size={32} />
+                    </div>
+
+                    {/* Rating */}
+                    <div className="flex items-center mb-4">
+                      {Array.from({ length: 5 }, (_, i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          className={`${
+                            i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+
+                    {/* Content */}
+                    <blockquote className="text-gray-700 mb-6 flex-grow italic text-sm">
+                      "{testimonial.content}"
+                    </blockquote>
+
+                    {/* Author */}
+                    <div className="border-t pt-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-semibold text-gray-900">{testimonial.client}</p>
+                          {testimonial.role && (
+                            <p className="text-sm text-gray-500">{testimonial.role}</p>
+                          )}
+                        </div>
+                        {testimonial.verified && (
+                          <div className="text-green-500 text-xs bg-green-50 px-2 py-1 rounded">
+                            ✓ Verified
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Mobile Navigation Dots & Arrows */}
+          <div className="flex items-center justify-center gap-4 mt-6">
+            <button 
+              onClick={prevTestimonial}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <div className="flex gap-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    index === currentIndex ? 'bg-[#E63946] w-6' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+            
+            <button 
+              onClick={nextTestimonial}
+              className="p-2 rounded-full bg-white shadow-md hover:bg-gray-50 transition-colors"
+              aria-label="Next testimonial"
+            >
+              <svg className="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop: Grid Layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <AnimationWrapper
               key={testimonial.id}
@@ -155,7 +261,6 @@ export const EnhancedTestimonials: React.FC = () => {
                       </div>
                     )}
                   </div>
-
                 </div>
               </motion.div>
             </AnimationWrapper>

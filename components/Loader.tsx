@@ -18,7 +18,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
   useEffect(() => {
     const startTime = Date.now();
-    const minDisplayTime = 6000; // Minimum 6 seconds display time for better viewing
+    const minDisplayTime = 5500; // 5.5 seconds - enough for all 5 images to fade in (0.8s * 5 = 4s + 1s buffer)
 
     // Preload all images
     const imagePromises = images.map((src) => {
@@ -86,7 +86,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
         </div>
       )}
       
-      {/* Mobile Layout - Neo-Swiss Style: Sharp edges, full bleed, minimal whitespace */}
+      {/* Mobile Layout - Neo-Swiss Style: Sharp edges, full bleed, one-by-one fade in */}
       <div className={`md:hidden relative w-full h-full transition-opacity duration-500 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}>
         {images.map((src, index) => {
           const pos = mobilePositions[index];
@@ -105,18 +105,16 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
               }}
               initial={{ 
                 opacity: 0, 
-                scale: 1.1,
-                x: index % 2 === 0 ? -30 : 30,
+                scale: 1.05,
               }}
               animate={{ 
                 opacity: 1, 
                 scale: 1, 
-                x: 0,
               }}
               transition={{
-                duration: 0.8,
-                delay: index * 0.15, 
-                ease: [0.25, 0.46, 0.45, 0.94]
+                duration: 1.0,
+                delay: index * 0.8, // 0.8 seconds between each image
+                ease: [0.4, 0, 0.2, 1]
               }}
             >
               <img 
@@ -185,8 +183,13 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
       {imagesLoaded && (
         <>
-          {/* Mobile: Neo-Swiss text overlay - bottom left, sharp edges */}
-          <div className="md:hidden absolute bottom-0 left-0 z-50 bg-white p-4 pr-8">
+          {/* Mobile: Neo-Swiss text overlay - bottom left, sharp edges, fades in after images */}
+          <motion.div 
+            className="md:hidden absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 4.2 }} // Appears after all images (5 * 0.8 = 4s)
+          >
             <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
               MAE LIEW
             </h1>
@@ -195,7 +198,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
               <span>Atelier</span>
               <span>Est. 2008</span>
             </div>
-          </div>
+          </motion.div>
 
           {/* Desktop: Original styled text */}
           <div className="hidden md:block absolute bottom-10 left-6 z-50">
