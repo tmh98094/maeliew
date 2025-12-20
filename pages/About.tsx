@@ -148,10 +148,10 @@ const About: React.FC = () => {
 
         {/* Image Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-24">
-          <img src="https://i.ibb.co/spzr8f5G/Loading2.jpg" alt="Studio work" className="w-full h-full object-cover translate-y-8" />
-          <img src="https://i.ibb.co/JRDtN0zJ/Loading3.jpg" alt="Studio work" className="w-full h-full object-cover" />
-          <img src="https://i.ibb.co/BK2cbPXJ/Loading4.jpg" alt="Studio work" className="w-full h-full object-cover translate-y-12" />
-          <img src="https://i.ibb.co/v4yVSsWh/Loading5.jpg" alt="Studio work" className="w-full h-full object-cover" />
+          <img src="/images/loading/Loading2.webp" alt="Studio work" className="w-full h-full object-cover translate-y-8" />
+          <img src="/images/loading/Loading3.webp" alt="Studio work" className="w-full h-full object-cover" />
+          <img src="/images/loading/Loading4.webp" alt="Studio work" className="w-full h-full object-cover translate-y-12" />
+          <img src="/images/loading/Loading5.webp" alt="Studio work" className="w-full h-full object-cover" />
         </div>
 
       </div>

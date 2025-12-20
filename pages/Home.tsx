@@ -11,12 +11,12 @@ import PartnersGrid from '../src/components/PartnersGrid';
 
 // --- DATA ---
 const HERO_IMAGES = [
-  "/images/general/hero (2).jpg",
-  "/images/general/hero (3).jpg",
-  "/images/general/hero (4).jpg",
-  "/images/general/hero (5).jpg",
-  "/images/general/hero (6).jpg",
-  "/images/general/hero (7).jpg",
+  "/images/general/hero (2).webp",
+  "/images/general/hero (3).webp",
+  "/images/general/hero (4).webp",
+  "/images/general/hero (5).webp",
+  "/images/general/hero (6).webp",
+  "/images/general/hero (7).webp",
 ];
 
 const CATEGORIES = [

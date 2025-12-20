@@ -18,7 +18,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
   useEffect(() => {
     const startTime = Date.now();
-    const minDisplayTime = 5500; // 5.5 seconds - enough for all 5 images to fade in (0.8s * 5 = 4s + 1s buffer)
+    const minDisplayTime = 6000; // 6 seconds - enough for all 5 images to fade in (0.8s * 5 = 4s + 2s buffer)
 
     // Preload all images
     const imagePromises = images.map((src) => {
@@ -79,9 +79,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
     >
       {!imagesLoaded && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-gray-800 text-center">
-            <div className="w-8 h-8 border-2 border-[#E63946] border-t-transparent rounded-full animate-spin mx-auto"></div>
-          </div>
+          <div className="w-8 h-8 border-2 border-[#E63946] border-t-transparent rounded-full animate-spin"></div>
         </div>
       )}
       
@@ -187,7 +185,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
             className="md:hidden absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 4.2 }} // Appears after all images (5 * 0.8 = 4s)
+            transition={{ duration: 0.6, delay: 4.5 }} // Appears after all images (5 * 0.8 = 4s + 0.5s buffer)
           >
             <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
               MAE LIEW
