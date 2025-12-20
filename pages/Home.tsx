@@ -42,9 +42,9 @@ const getPortfolioPreviews = () => {
   
   // Fallback to default
   return {
-    wedding: ["/images/portfolio/wd.jpeg", "/images/portfolio/wd1.jpeg", "/images/portfolio/wd2.jpeg"],
-    rom: ["/images/portfolio/rom1.jpeg", "/images/portfolio/rom3.jpeg", "/images/portfolio/rom2.jpeg"],
-    celebrity: ["/images/about/ceb1.png", "/images/about/ceb2.png", "/images/about/ceb3.png"]
+    wedding: ["/images/portfolio/wd.webp", "/images/portfolio/wd1.webp", "/images/portfolio/wd2.webp"],
+    rom: ["/images/portfolio/rom1.webp", "/images/portfolio/rom3.webp", "/images/portfolio/rom2.webp"],
+    celebrity: ["/images/about/ceb1.webp", "/images/about/ceb2.webp", "/images/about/ceb3.webp"]
   };
 };
 
@@ -52,19 +52,19 @@ const SERVICES_PREVIEW = [
   { 
     title: "The Wedding", 
     subtitle: "Bridal Artistry",
-    image: "/images/general/wedding2.jpeg",
+    image: "/images/general/wedding2.webp",
     link: "/services" 
   },
   { 
     title: "ROM", 
     subtitle: "Conceptual Shoots",
-    image: "/images/general/ROM.png",
+    image: "/images/general/ROM.webp",
     link: "/services" 
   },
   { 
     title: "Personal Makeup", 
     subtitle: "High Fashion",
-    image: "/images/general/personal.jpeg",
+    image: "/images/general/personal.webp",
     link: "/services" 
   }
 ];
@@ -221,7 +221,7 @@ const Home: React.FC = () => {
           </div>
           {/* Mobile Swipeable Gallery with Hidden Scrollbar */}
           <div className="flex overflow-x-auto snap-x gap-4 md:gap-0 pb-8 md:pb-0 md:block no-scrollbar">
-            <img src="images/about/mae.jpeg" alt="Mae Liew" className="w-[85vw] md:w-full flex-shrink-0 snap-center shadow-xl object-cover aspect-[3/4]" />
+            <img src="images/about/mae.webp" alt="Mae Liew" className="w-[85vw] md:w-full flex-shrink-0 snap-center shadow-xl object-cover aspect-[3/4]" />
             <img src="https://picsum.photos/600/800?random=about2" alt="Mae Liew Work" className="w-[85vw] md:hidden flex-shrink-0 snap-center shadow-xl object-cover aspect-[3/4]" />
           </div>
         </div>
@@ -238,28 +238,28 @@ const Home: React.FC = () => {
           title="Tinashe" 
           subtitle="International R&B Artist"
           desc="Commissioned for exclusive event styling. Trusted by global icons for red carpet precision and stage-ready durability."
-          image="/images/about/tinashe2.png"
+          image="/images/about/tinashe2.webp"
           align="left"
         />
         <AchievementItem 
           title="Shu Uemura" 
           subtitle="Japan-Trained Excellence"
           desc="Former Brand Instructor for Shu Uemura, trained in Japan. Mastered the art of precision and technique that defines Japanese beauty standards."
-          image="/images/about/shuuemura.png"
+          image="/images/about/shuuemura.webp"
           align="right"
         />
         <AchievementItem 
           title="MAC Cosmetics" 
           subtitle="Global Beauty Authority"
           desc="Consultant for MAC Cosmetics with record-breaking sales achievements. A mentor to the next generation of makeup artists worldwide."
-          image="/images/about/mac2.png"
+          image="/images/about/mac2.webp"
           align="left"
         />
         <AchievementItem 
           title="TVB Actresses" 
           subtitle="Hong Kong Magazine"
           desc="The preferred artist for Tavia Yeung, Chrissie Chau, and Gin Lee. Delivering high-definition perfection for the camera."
-          image="/images/about/hongkong.png"
+          image="/images/about/hongkong.webp"
           align="right"
         />
       </section>
@@ -379,7 +379,7 @@ const Home: React.FC = () => {
                       alt="Portfolio" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).src = '/images/placeholder.jpg';
+                        (e.target as HTMLImageElement).src = '/images/placeholder.webp';
                       }}
                     />
                     <div className="absolute inset-0 bg-black/20 md:bg-black/0 md:group-hover:bg-black/20 transition-all"></div>

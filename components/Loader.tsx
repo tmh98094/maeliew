@@ -6,11 +6,11 @@ interface LoaderProps {
 }
 
 const images = [
-  "/images/loading/Loading1.jpeg",
-  "/images/loading/Loading5.jpeg",
-  "/images/loading/Loading3.jpeg",
-  "/images/loading/Loading4.jpeg",
-  "/images/loading/Loading2.jpeg",
+  "/images/loading/Loading1.webp",
+  "/images/loading/Loading5.webp",
+  "/images/loading/Loading3.webp",
+  "/images/loading/Loading4.webp",
+  "/images/loading/Loading2.webp",
 ];
 
 const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
@@ -80,8 +80,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       {!imagesLoaded && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-gray-800 text-center">
-            <div className="w-8 h-8 border-2 border-[#E63946] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-            <p className="text-sm tracking-widest uppercase text-gray-700">Loading Atelier</p>
+            <div className="w-8 h-8 border-2 border-[#E63946] border-t-transparent rounded-full animate-spin mx-auto"></div>
           </div>
         </div>
       )}

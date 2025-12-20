@@ -63,19 +63,19 @@ export const CuratedCollectionManager: React.FC = () => {
             id: 'wedding-collection',
             name: 'Wedding Collection',
             category: 'wedding',
-            images: ["/images/portfolio/wd.jpeg", "/images/portfolio/wd1.jpeg", "/images/portfolio/wd2.jpeg"]
+            images: ["/images/portfolio/wd.webp", "/images/portfolio/wd1.webp", "/images/portfolio/wd2.webp"]
           },
           {
             id: 'rom-collection',
             name: 'ROM Collection',
             category: 'rom',
-            images: ["/images/portfolio/rom1.jpeg", "/images/portfolio/rom3.jpeg", "/images/portfolio/rom2.jpeg"]
+            images: ["/images/portfolio/rom1.webp", "/images/portfolio/rom3.webp", "/images/portfolio/rom2.webp"]
           },
           {
             id: 'celebrity-collection',
             name: 'Celebrity Collection',
             category: 'celebrity',
-            images: ["/images/about/ceb1.png", "/images/about/ceb2.png", "/images/about/ceb3.png"]
+            images: ["/images/about/ceb1.webp", "/images/about/ceb2.webp", "/images/about/ceb3.webp"]
           }
         ];
         setCollections(defaultCollections);
@@ -240,7 +240,7 @@ export const CuratedCollectionManager: React.FC = () => {
                           alt={`${category.label} ${index + 1}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            (e.target as HTMLImageElement).src = '/images/placeholder.jpg';
+                            (e.target as HTMLImageElement).src = '/images/placeholder.webp';
                           }}
                         />
                       </div>

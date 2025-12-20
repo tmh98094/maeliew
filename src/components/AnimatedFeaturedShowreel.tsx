@@ -56,7 +56,7 @@ export const AnimatedFeaturedShowreel: React.FC<AnimatedFeaturedShowreelProps> =
               {
                 id: 'fallback-1',
                 title: 'Marie France Asia',
-                file_path: '/images/featured/MarieFrance.png',
+                file_path: '/images/featured/MarieFrance.webp',
                 alt_text: 'Marie France Asia logo',
                 type: 'featured' as const,
                 status: 'published' as const,
@@ -68,7 +68,7 @@ export const AnimatedFeaturedShowreel: React.FC<AnimatedFeaturedShowreelProps> =
               {
                 id: 'fallback-2',
                 title: 'BrideStory',
-                file_path: '/images/featured/BrideStory.png',
+                file_path: '/images/featured/BrideStory.webp',
                 alt_text: 'BrideStory logo',
                 type: 'featured' as const,
                 status: 'published' as const,
@@ -80,7 +80,7 @@ export const AnimatedFeaturedShowreel: React.FC<AnimatedFeaturedShowreelProps> =
               {
                 id: 'fallback-3',
                 title: 'Shu Uemura',
-                file_path: '/images/featured/shu-uemura-logo.png',
+                file_path: '/images/featured/shu-uemura-logo.webp',
                 alt_text: 'Shu Uemura logo',
                 type: 'featured' as const,
                 status: 'published' as const,

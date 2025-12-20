@@ -10,14 +10,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'portfolio-bridal-1',
     filename: 'bridal-makeup-elegant.jpg',
-    path: '/images/portfolio/bridal-makeup-elegant.jpg',
+    path: '/images/portfolio/bridal-makeup-elegant.webp',
     alt: 'Elegant bridal makeup with soft glam finish and natural glow',
     category: 'portfolio',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/portfolio/bridal-makeup-elegant.webp',
       avif: '/images/portfolio/bridal-makeup-elegant.avif',
-      thumbnail: '/images/portfolio/bridal-makeup-elegant-thumb.jpg'
+      thumbnail: '/images/portfolio/bridal-makeup-elegant-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-15'),
@@ -28,14 +28,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'portfolio-editorial-1',
     filename: 'editorial-fashion-bold.jpg',
-    path: '/images/portfolio/editorial-fashion-bold.jpg',
+    path: '/images/portfolio/editorial-fashion-bold.webp',
     alt: 'Bold editorial fashion makeup with dramatic eye design',
     category: 'portfolio',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/portfolio/editorial-fashion-bold.webp',
       avif: '/images/portfolio/editorial-fashion-bold.avif',
-      thumbnail: '/images/portfolio/editorial-fashion-bold-thumb.jpg'
+      thumbnail: '/images/portfolio/editorial-fashion-bold-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-20'),
@@ -46,14 +46,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'portfolio-celebrity-1',
     filename: 'celebrity-red-carpet.jpg',
-    path: '/images/portfolio/celebrity-red-carpet.jpg',
+    path: '/images/portfolio/celebrity-red-carpet.webp',
     alt: 'Glamorous red carpet makeup with sophisticated contouring',
     category: 'portfolio',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/portfolio/celebrity-red-carpet.webp',
       avif: '/images/portfolio/celebrity-red-carpet.avif',
-      thumbnail: '/images/portfolio/celebrity-red-carpet-thumb.jpg'
+      thumbnail: '/images/portfolio/celebrity-red-carpet-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-02-01'),
@@ -66,14 +66,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'about-headshot',
     filename: 'mae-liew-professional-headshot.jpg',
-    path: '/images/about/mae-liew-professional-headshot.jpg',
+    path: '/images/about/mae-liew-professional-headshot.webp',
     alt: 'Mae Liew professional headshot in studio setting',
     category: 'about',
     dimensions: { width: 1200, height: 1600 },
     optimized: {
       webp: '/images/about/mae-liew-professional-headshot.webp',
       avif: '/images/about/mae-liew-professional-headshot.avif',
-      thumbnail: '/images/about/mae-liew-professional-headshot-thumb.jpg'
+      thumbnail: '/images/about/mae-liew-professional-headshot-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-10'),
@@ -84,14 +84,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'about-workspace',
     filename: 'makeup-studio-workspace.jpg',
-    path: '/images/about/makeup-studio-workspace.jpg',
+    path: '/images/about/makeup-studio-workspace.webp',
     alt: 'Mae Liew makeup studio workspace with professional tools and lighting',
     category: 'about',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/about/makeup-studio-workspace.webp',
       avif: '/images/about/makeup-studio-workspace.avif',
-      thumbnail: '/images/about/makeup-studio-workspace-thumb.jpg'
+      thumbnail: '/images/about/makeup-studio-workspace-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-12'),
@@ -104,14 +104,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'services-bridal-process',
     filename: 'bridal-makeup-process.jpg',
-    path: '/images/services/bridal-makeup-process.jpg',
+    path: '/images/services/bridal-makeup-process.webp',
     alt: 'Step-by-step bridal makeup application process',
     category: 'services',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/services/bridal-makeup-process.webp',
       avif: '/images/services/bridal-makeup-process.avif',
-      thumbnail: '/images/services/bridal-makeup-process-thumb.jpg'
+      thumbnail: '/images/services/bridal-makeup-process-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-25'),
@@ -122,14 +122,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'services-consultation',
     filename: 'makeup-consultation-session.jpg',
-    path: '/images/services/makeup-consultation-session.jpg',
+    path: '/images/services/makeup-consultation-session.webp',
     alt: 'Personal makeup consultation and color matching session',
     category: 'services',
     dimensions: { width: 1920, height: 1280 },
     optimized: {
       webp: '/images/services/makeup-consultation-session.webp',
       avif: '/images/services/makeup-consultation-session.avif',
-      thumbnail: '/images/services/makeup-consultation-session-thumb.jpg'
+      thumbnail: '/images/services/makeup-consultation-session-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-02-05'),
@@ -142,14 +142,14 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'blog-makeup-trends',
     filename: 'makeup-trends-2024.jpg',
-    path: '/images/blog/makeup-trends-2024.jpg',
+    path: '/images/blog/makeup-trends-2024.webp',
     alt: '2024 makeup trends showcase with modern techniques',
     category: 'blog',
     dimensions: { width: 1920, height: 1080 },
     optimized: {
       webp: '/images/blog/makeup-trends-2024.webp',
       avif: '/images/blog/makeup-trends-2024.avif',
-      thumbnail: '/images/blog/makeup-trends-2024-thumb.jpg'
+      thumbnail: '/images/blog/makeup-trends-2024-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-02-10'),
@@ -162,13 +162,13 @@ export const imageManifest: ImageAsset[] = [
   {
     id: 'general-logo',
     filename: 'mae-liew-atelier-logo.png',
-    path: '/images/general/mae-liew-atelier-logo.png',
+    path: '/images/general/mae-liew-atelier-logo.webp',
     alt: 'Mae Liew Atelier logo',
     category: 'general',
     dimensions: { width: 400, height: 200 },
     optimized: {
       webp: '/images/general/mae-liew-atelier-logo.webp',
-      thumbnail: '/images/general/mae-liew-atelier-logo-thumb.png'
+      thumbnail: '/images/general/mae-liew-atelier-logo-thumb.webp'
     },
     metadata: {
       uploadDate: new Date('2024-01-01'),
