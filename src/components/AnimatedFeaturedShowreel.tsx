@@ -247,7 +247,7 @@ export const AnimatedFeaturedShowreel: React.FC<AnimatedFeaturedShowreelProps> =
               style={{
                 minWidth: '100px',
                 width: '120px',
-                height: '70px'
+                height: item.title === 'Shu Uemura' ? '100px' : '70px' // Taller container for Shu Uemura
               }}
               role="listitem"
               aria-label={`Featured in ${item.title}`}
@@ -255,7 +255,11 @@ export const AnimatedFeaturedShowreel: React.FC<AnimatedFeaturedShowreelProps> =
               <img
                 src={item.file_path || ''}
                 alt={item.alt_text || item.title}
-                className="h-8 md:h-10 lg:h-12 max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className={`max-w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300 ${
+                  item.title === 'Shu Uemura' 
+                    ? 'h-16 md:h-20 lg:h-24' // 2x larger for Shu Uemura
+                    : 'h-8 md:h-10 lg:h-12'  // Normal size for others
+                }`}
                 title={item.title}
                 loading="lazy"
                 decoding="async"

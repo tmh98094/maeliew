@@ -194,7 +194,7 @@ export const PartnersGrid: React.FC<PartnersGridProps> = ({
               }}
               className="group relative bg-white rounded-lg p-4 md:p-6 hover:shadow-lg transition-all duration-300 border border-gray-100 touch-manipulation focus:outline-none focus:ring-2 focus:ring-[#E63946] focus:ring-opacity-50"
               style={{
-                minHeight: '100px'
+                minHeight: partner.title === 'Shu Uemura' || partner.title === 'MAC Cosmetics' ? '140px' : '100px'
               }}
               role="listitem"
               aria-label={`Partner: ${partner.title}`}
@@ -204,7 +204,11 @@ export const PartnersGrid: React.FC<PartnersGridProps> = ({
                 <img
                   src={partner.file_path || ''}
                   alt={partner.alt_text || partner.title}
-                  className="max-w-full max-h-12 md:max-h-16 object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105"
+                  className={`max-w-full object-contain grayscale group-hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300 group-hover:scale-105 ${
+                    partner.title === 'Shu Uemura' || partner.title === 'MAC Cosmetics'
+                      ? 'max-h-24 md:max-h-32' // 2x larger for Shu Uemura and MAC Cosmetics
+                      : 'max-h-12 md:max-h-16'  // Normal size for others
+                  }`}
                   title={partner.title}
                   loading="lazy"
                   decoding="async"
