@@ -83,9 +83,26 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
         </div>
       )}
       
-      {/* Mobile Layout - Neo-Swiss Style: Sharp edges, full bleed, one-by-one fade in */}
-      <div className={`md:hidden relative w-full h-full transition-opacity duration-500 ${imagesLoaded ? 'opacity-100' : 'opacity-0'}`}>
-        {images.map((src, index) => {
+      {/* Mobile Layout - Neo-Swiss Style: Text first, then images one-by-one */}
+      <div className="md:hidden relative w-full h-full">
+        {/* Mobile text - shows immediately */}
+        <motion.div 
+          className="absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
+          initial={{ opacity: 1, y: 0 }} // Show immediately
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
+            MAE LIEW
+          </h1>
+          <div className="h-[3px] bg-[#E63946] my-2 w-16"></div>
+          <div className="flex gap-4 text-[10px] tracking-[0.3em] uppercase font-bold text-gray-600">
+            <span>Atelier</span>
+            <span>Est. 2008</span>
+          </div>
+        </motion.div>
+
+        {/* Images - only show after loaded, then animate one by one */}
+        {imagesLoaded && images.map((src, index) => {
           const pos = mobilePositions[index];
           return (
             <motion.div
@@ -124,12 +141,14 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
           );
         })}
         
-        {/* Neo-Swiss grid lines overlay */}
-        <div className="absolute inset-0 pointer-events-none z-10">
-          <div className="absolute top-[35%] left-0 right-0 h-[2px] bg-white/30"></div>
-          <div className="absolute top-[68%] left-0 right-0 h-[2px] bg-white/30"></div>
-          <div className="absolute left-[65%] top-0 bottom-[30%] w-[2px] bg-white/30"></div>
-        </div>
+        {/* Neo-Swiss grid lines overlay - only show when images are loaded */}
+        {imagesLoaded && (
+          <div className="absolute inset-0 pointer-events-none z-10">
+            <div className="absolute top-[35%] left-0 right-0 h-[2px] bg-white/30"></div>
+            <div className="absolute top-[68%] left-0 right-0 h-[2px] bg-white/30"></div>
+            <div className="absolute left-[65%] top-0 bottom-[30%] w-[2px] bg-white/30"></div>
+          </div>
+        )}
       </div>
 
       {/* Desktop Layout - Structured Collage */}
@@ -180,23 +199,6 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
 
       {imagesLoaded && (
         <>
-          {/* Mobile: Neo-Swiss text overlay - bottom left, sharp edges, fades in after images */}
-          <motion.div 
-            className="md:hidden absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 4.5 }} // Appears after all images (5 * 0.8 = 4s + 0.5s buffer)
-          >
-            <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
-              MAE LIEW
-            </h1>
-            <div className="h-[3px] bg-[#E63946] my-2 w-16"></div>
-            <div className="flex gap-4 text-[10px] tracking-[0.3em] uppercase font-bold text-gray-600">
-              <span>Atelier</span>
-              <span>Est. 2008</span>
-            </div>
-          </motion.div>
-
           {/* Desktop: Original styled text */}
           <div className="hidden md:block absolute bottom-10 left-6 z-50">
             <div className="bg-white/90 backdrop-blur-sm p-6 rounded-lg border-l-4 border-[#E63946] shadow-xl">
