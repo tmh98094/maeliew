@@ -52,15 +52,15 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
     return () => clearTimeout(timer);
   }, [onComplete]);
 
-  // Neo-Swiss style positions - adjusted for mobile safe areas and full visibility
-  // Mobile: Grid-based with safe margins to ensure all images are fully visible
+  // Neo-Swiss style positions - sharp edges, full bleed, minimal whitespace (75-80% coverage)
+  // Mobile: Grid-based, edge-to-edge with small gaps
   // Desktop: Structured collage with slight rotations
   const mobilePositions = [
-    { top: '5%', left: '0', width: '65%', height: '32%' }, // Added 5% top margin for Loading1
-    { top: '5%', right: '0', width: '33%', height: '22%' }, // Adjusted for safe area
-    { top: '28%', right: '0', width: '33%', height: '27%' }, // Adjusted positioning
-    { top: '38%', left: '0', width: '45%', height: '29%' }, // Adjusted positioning
-    { bottom: '5%', left: '0', width: '100%', height: '27%' }, // Added 5% bottom margin
+    { top: '0', left: '0', width: '65%', height: '35%' },
+    { top: '0', right: '0', width: '33%', height: '25%' },
+    { top: '26%', right: '0', width: '33%', height: '30%' },
+    { top: '36%', left: '0', width: '45%', height: '32%' },
+    { bottom: '0', left: '0', width: '100%', height: '30%' },
   ];
 
   const desktopPositions = [
@@ -84,23 +84,40 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       )}
       
       {/* Mobile Layout - Neo-Swiss Style: Text first, then images one-by-one */}
-      <div className="md:hidden relative w-full h-full" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        {/* Mobile text - shows immediately */}
+      <div className="md:hidden relative w-full h-full">
+      {/* Mobile Layout - Neo-Swiss Style: Text first, then images one-by-one */}
+      <div className="md:hidden relative w-full h-full">
+        {/* Small center text - shows immediately */}
         <motion.div 
-          className="absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
-          initial={{ opacity: 1, y: 0 }} // Show immediately
-          animate={{ opacity: 1, y: 0 }}
-          style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
+          className="absolute inset-0 flex items-center justify-center z-40"
+          initial={{ opacity: 0.5 }}
+          animate={{ opacity: 0.5 }}
         >
-          <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
-            MAE LIEW
-          </h1>
-          <div className="h-[3px] bg-[#E63946] my-2 w-16"></div>
-          <div className="flex gap-4 text-[10px] tracking-[0.3em] uppercase font-bold text-gray-600">
-            <span>Atelier</span>
-            <span>Est. 2008</span>
+          <div className="text-center">
+            <h2 className="text-lg font-serif tracking-wide text-gray-600">
+              Mae Liew Atelier
+            </h2>
           </div>
         </motion.div>
+
+        {/* Main mobile text - shows 1 second after last image */}
+        {imagesLoaded && (
+          <motion.div 
+            className="absolute bottom-0 left-0 z-50 bg-white p-4 pr-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 5.0 }} // 1 second after last image (5 * 0.8 + 1 = 5s)
+          >
+            <h1 className="text-3xl font-serif tracking-tight text-gray-900 leading-none">
+              MAE LIEW
+            </h1>
+            <div className="h-[3px] bg-[#E63946] my-2 w-16"></div>
+            <div className="flex gap-4 text-[10px] tracking-[0.3em] uppercase font-bold text-gray-600">
+              <span>Atelier</span>
+              <span>Est. 2008</span>
+            </div>
+          </motion.div>
+        )}
 
         {/* Images - only show after loaded, then animate one by one */}
         {imagesLoaded && images.map((src, index) => {
@@ -136,18 +153,19 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
                 src={src} 
                 alt={`Mae Liew Atelier Work ${index + 1}`} 
                 className="w-full h-full object-cover"
+                style={{ objectPosition: 'top' }} // Crop from bottom, keep top visible
                 loading="eager"
               />
             </motion.div>
           );
         })}
         
-        {/* Neo-Swiss grid lines overlay - adjusted for new positioning */}
+        {/* Neo-Swiss grid lines overlay - only show when images are loaded */}
         {imagesLoaded && (
           <div className="absolute inset-0 pointer-events-none z-10">
-            <div className="absolute top-[37%] left-0 right-0 h-[2px] bg-white/30"></div>
-            <div className="absolute top-[67%] left-0 right-0 h-[2px] bg-white/30"></div>
-            <div className="absolute left-[65%] top-[5%] bottom-[32%] w-[2px] bg-white/30"></div>
+            <div className="absolute top-[35%] left-0 right-0 h-[2px] bg-white/30"></div>
+            <div className="absolute top-[68%] left-0 right-0 h-[2px] bg-white/30"></div>
+            <div className="absolute left-[65%] top-0 bottom-[30%] w-[2px] bg-white/30"></div>
           </div>
         )}
       </div>
