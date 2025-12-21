@@ -4,10 +4,20 @@ import StatsCards from '../src/components/StatsCards';
 import AnimatedFeaturedShowreel from '../src/components/AnimatedFeaturedShowreel';
 import PartnersGrid from '../src/components/PartnersGrid';
 import { SmoothPageTransition } from '../src/components/AdvancedUIComponents';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 const About: React.FC = () => {
   return (
     <SmoothPageTransition className="w-full bg-[#fdfbf7]">
+      <SEO 
+        title="About Mae Liew - Award-Winning Makeup Artist"
+        description="Meet Mae Liew, Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. 20+ years experience, former MAC Cosmetics consultant and Shu Uemura brand instructor. Specializing in bridal, wedding, and celebrity makeup."
+        keywords="Mae Liew makeup artist, about Mae Liew, makeup artist biography, MAC Cosmetics, Shu Uemura, bridal makeup artist Malaysia, celebrity makeup artist"
+        url="https://www.maeliewatelier.com/about"
+        image="https://www.maeliewatelier.com/images/about/mae.webp"
+      />
+      <StructuredData type="person" />
       {/* Header Image */}
       <div className="h-[70vh] w-full relative overflow-hidden">
         <img 

@@ -8,6 +8,8 @@ import InstagramGallery from '../src/components/InstagramGallery';
 import StatsCards from '../src/components/StatsCards';
 import AnimatedFeaturedShowreel from '../src/components/AnimatedFeaturedShowreel';
 import PartnersGrid from '../src/components/PartnersGrid';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 // --- DATA ---
 const HERO_IMAGES = [
@@ -147,6 +149,16 @@ const Home: React.FC = () => {
 
   return (
     <SmoothPageTransition className="w-full bg-[#fdfbf7]">
+      <SEO 
+        title="Mae Liew Atelier - Top 10 Malaysian Bridal Makeup Artist"
+        description="Award-winning bridal makeup artist in Kuala Lumpur. Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. Specializing in wedding, ROM, and celebrity makeup with 20+ years experience."
+        keywords="bridal makeup artist Malaysia, wedding makeup KL, makeup artist Kuala Lumpur, bridal makeup, ROM makeup, celebrity makeup artist, Mae Liew, makeup artist Malaysia, wedding makeup artist, bridal beauty Malaysia"
+        url="https://www.maeliewatelier.com"
+        image="https://www.maeliewatelier.com/images/about/mae.webp"
+      />
+      <StructuredData type="organization" />
+      <StructuredData type="person" />
+      <StructuredData type="service" />
       
       {/* 1. HERO CAROUSEL */}
       <section className="h-[100vh] w-full relative overflow-hidden flex items-center justify-center">

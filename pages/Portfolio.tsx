@@ -6,6 +6,8 @@ import { SmoothPageTransition } from '../src/components/AdvancedUIComponents';
 import { CRMService } from '../src/services/crmService';
 import { Content, Category } from '../src/lib/supabase';
 import { X } from 'lucide-react';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 const Portfolio: React.FC = () => {
   const [portfolioContent, setPortfolioContent] = useState<Content[]>([]);
@@ -69,6 +71,13 @@ const Portfolio: React.FC = () => {
 
   return (
     <SmoothPageTransition className="pt-32 pb-24 min-h-screen">
+      <SEO 
+        title="Portfolio - Wedding & Bridal Makeup Gallery"
+        description="Browse Mae Liew's stunning portfolio of bridal makeup, wedding makeup, ROM makeup, and celebrity makeup work. Award-winning makeup artistry showcased through beautiful transformations."
+        keywords="makeup portfolio, bridal makeup gallery, wedding makeup photos, ROM makeup, celebrity makeup, makeup artist work, before after makeup, bridal transformation"
+        url="https://www.maeliewatelier.com/portfolio"
+        image="https://www.maeliewatelier.com/images/portfolio/wd.webp"
+      />
       <div className="px-4 md:px-8">
         <div className="text-center mb-12">
            <h1 className="font-serif text-5xl md:text-7xl">Portfolio</h1>

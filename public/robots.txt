@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin
+Disallow: /api/
+Disallow: /_next/
+Disallow: /src/
+
+# Sitemap
+Sitemap: https://www.maeliewatelier.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1

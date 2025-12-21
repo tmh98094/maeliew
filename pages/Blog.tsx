@@ -5,6 +5,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { CRMService } from '../src/services/crmService';
 import { Content } from '../src/lib/supabase';
 import { titleToSlug } from '../src/utils/slugUtils';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 // High-quality wedding stock images from Unsplash
 const WEDDING_IMAGES = [
@@ -171,6 +173,13 @@ const Blog: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
+      <SEO 
+        title="Beauty & Wedding Blog - Makeup Tips & Trends"
+        description="Discover the latest bridal makeup trends, wedding beauty tips, and professional makeup advice from Mae Liew. Expert insights on bridal beauty, makeup techniques, and wedding preparation."
+        keywords="bridal makeup blog, wedding beauty tips, makeup trends, bridal beauty advice, wedding makeup tips, makeup tutorials, bridal preparation, beauty blog Malaysia"
+        url="https://www.maeliewatelier.com/blog"
+        image="https://www.maeliewatelier.com/images/about/mae.webp"
+      />
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         
         <div className="text-center mb-24">

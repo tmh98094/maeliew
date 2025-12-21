@@ -7,6 +7,8 @@ import { SmoothPageTransition } from '../src/components/AdvancedUIComponents';
 import { CRMService, ServicePackage } from '../src/services/crmService';
 import { formatMalaysianCurrency, MALAYSIA_SERVICE_CATEGORIES } from '../src/utils/malaysiaLocalization';
 import { ServiceWhatsAppButton } from '../src/components/WhatsAppButton';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 const Services: React.FC = () => {
   const [services, setServices] = useState<ServicePackage[]>([]);
@@ -181,6 +183,14 @@ const Services: React.FC = () => {
 
   return (
     <SmoothPageTransition className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
+      <SEO 
+        title="Makeup Services - Bridal, Wedding & ROM Makeup"
+        description="Professional makeup services in Kuala Lumpur. Bridal makeup, wedding makeup, ROM makeup, and celebrity makeup by award-winning artist Mae Liew. Book your consultation today."
+        keywords="bridal makeup services, wedding makeup KL, ROM makeup, makeup services Malaysia, bridal makeup packages, wedding makeup artist, makeup consultation"
+        url="https://www.maeliewatelier.com/services"
+        image="https://www.maeliewatelier.com/images/general/wedding2.webp"
+      />
+      <StructuredData type="service" />
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         
         {/* Header */}

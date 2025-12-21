@@ -5,6 +5,8 @@ import { ArrowLeft, Calendar, Tag, Share2, Facebook, Twitter, Linkedin } from 'l
 import { CRMService } from '../src/services/crmService';
 import { Content } from '../src/lib/supabase';
 import { findPostBySlug, titleToSlug } from '../src/utils/slugUtils';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -124,6 +126,29 @@ const BlogPost: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
+      <SEO 
+        title={`${post.title} | Mae Liew Atelier Blog`}
+        description={post.description || `${post.content?.substring(0, 160)}...` || "Professional makeup tips and bridal beauty advice from Mae Liew Atelier"}
+        keywords={`${post.title}, bridal makeup tips, wedding beauty, makeup advice, Mae Liew blog`}
+        url={`https://www.maeliewatelier.com/blog/${slug}`}
+        image={post.file_path || "https://www.maeliewatelier.com/images/about/mae.webp"}
+        type="article"
+        publishedTime={post.created_at}
+        modifiedTime={post.updated_at}
+        section="Beauty & Makeup"
+        tags={[post.title, "Bridal Makeup", "Wedding Beauty", "Makeup Tips"]}
+      />
+      <StructuredData 
+        type="article" 
+        data={{
+          title: post.title,
+          description: post.description || post.content?.substring(0, 160),
+          image: post.file_path,
+          url: `https://www.maeliewatelier.com/blog/${slug}`,
+          publishedTime: post.created_at,
+          modifiedTime: post.updated_at
+        }}
+      />
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         
         {/* Back Button */}

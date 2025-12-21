@@ -3,11 +3,21 @@ import { motion } from 'framer-motion';
 import { EnhancedContactForm } from '../src/components/EnhancedContactForm';
 import { SmoothPageTransition, ToastProvider } from '../src/components/AdvancedUIComponents';
 import { MALAYSIA_CONTACT_INFO } from '../src/utils/malaysiaLocalization';
+import SEO from '../src/components/SEO';
+import StructuredData from '../src/components/StructuredData';
 
 const Contact: React.FC = () => {
   return (
     <ToastProvider>
       <SmoothPageTransition className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
+        <SEO 
+          title="Contact Mae Liew Atelier - Book Your Makeup Consultation"
+          description="Contact Mae Liew Atelier for professional makeup services in Kuala Lumpur. Book your bridal makeup consultation, wedding makeup, or ROM makeup appointment. Call +6012-2681879 or email maeliew@gmail.com"
+          keywords="contact makeup artist, book makeup consultation, bridal makeup appointment, wedding makeup booking, Mae Liew contact, makeup artist KL contact"
+          url="https://www.maeliewatelier.com/contact"
+          image="https://www.maeliewatelier.com/images/about/mae.webp"
+        />
+        <StructuredData type="organization" />
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         
         <div className="flex flex-col md:flex-row gap-16">
