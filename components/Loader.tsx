@@ -85,8 +85,6 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
       
       {/* Mobile Layout - Neo-Swiss Style: Text first, then images one-by-one */}
       <div className="md:hidden relative w-full h-full">
-      {/* Mobile Layout - Neo-Swiss Style: Text first, then images one-by-one */}
-      <div className="md:hidden relative w-full h-full">
         {/* Small center text - shows immediately */}
         <motion.div 
           className="absolute inset-0 flex items-center justify-center z-40"
