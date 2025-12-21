@@ -21,7 +21,7 @@ const About: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             className="font-serif text-6xl md:text-8xl text-white text-center"
           >
-            The Atelier
+            About Me
           </motion.h1>
         </div>
       </div>
