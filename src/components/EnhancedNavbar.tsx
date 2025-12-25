@@ -14,7 +14,7 @@ const EnhancedNavbar: React.FC = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsScrolled(currentScrollY > 50);
-      
+
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
         setScrollDirection('down');
       } else {
@@ -48,25 +48,22 @@ const EnhancedNavbar: React.FC = () => {
 
   return (
     <>
-      <motion.nav 
-        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${
-          isScrolled 
-            ? 'bg-pearl/95 backdrop-blur-md shadow-lg border-b border-champagne/20' 
-            : 'bg-transparent'
-        }`}
+      <motion.nav
+        className={`fixed top-0 left-0 w-full z-40 transition-all duration-500 ${isScrolled
+          ? 'bg-pearl/95 backdrop-blur-md shadow-lg border-b border-champagne/20 py-4'
+          : 'bg-transparent py-6'
+          }`}
         initial={{ y: 0 }}
-        animate={{ 
-          y: scrollDirection === 'down' && isScrolled ? -100 : 0 
-        }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <div className="flex justify-between items-center px-6 md:px-12 py-6">
+        <div className="flex justify-between items-center px-6 md:px-12">
           <Link to="/" className="z-50 group">
-            <motion.div 
-              className="font-display text-2xl md:text-3xl tracking-tighter font-bold"
+            <motion.div
+              className={`font-display text-2xl md:text-4xl tracking-tight font-bold ${isScrolled ? 'text-warm-gray' : 'text-white drop-shadow-lg'}`}
               whileHover={{ scale: 1.05 }}
             >
-              Mae<span className="text-accent-red">.</span>Atelier
+              MaeLiew Atelier
             </motion.div>
           </Link>
 
@@ -79,9 +76,9 @@ const EnhancedNavbar: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link 
+                <Link
                   to={link.path}
-                  className="uppercase text-xs tracking-[0.3em] hover:text-accent-red transition-all duration-300 relative group font-medium"
+                  className={`uppercase text-xs tracking-[0.3em] hover:text-accent-red transition-all duration-300 relative group font-medium ${isScrolled ? 'text-warm-gray' : 'text-white drop-shadow-md'}`}
                 >
                   {link.name}
                   <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-gradient-to-r from-accent-red to-muted-gold transition-all duration-300 group-hover:w-full"></span>
@@ -91,7 +88,7 @@ const EnhancedNavbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle */}
-          <motion.button 
+          <motion.button
             className="lg:hidden z-50 p-2"
             onClick={() => setIsOpen(!isOpen)}
             whileTap={{ scale: 0.9 }}
@@ -135,7 +132,7 @@ const EnhancedNavbar: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.1 + index * 0.1 }}
                   >
-                    <Link 
+                    <Link
                       to={link.path}
                       className="block text-white font-display text-4xl sm:text-5xl hover:text-accent-red transition-colors duration-300 group"
                     >

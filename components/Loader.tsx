@@ -93,7 +93,7 @@ const Loader: React.FC<LoaderProps> = ({ onComplete }) => {
         >
           <div className="text-center">
             <h2 className="text-lg font-serif tracking-wide text-gray-600">
-              Mae Liew Atelier
+              MaeLiew Atelier
             </h2>
           </div>
         </motion.div>
