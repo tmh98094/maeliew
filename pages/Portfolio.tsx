@@ -77,9 +77,9 @@ const Portfolio: React.FC = () => {
   return (
     <SmoothPageTransition className="pt-32 pb-24 min-h-screen">
       <SEO
-        title="Portfolio - Wedding & Bridal Makeup Gallery"
-        description="Browse Mae Liew's stunning portfolio of bridal makeup, wedding makeup, ROM makeup, and celebrity makeup work. Award-winning makeup artistry showcased through beautiful transformations."
-        keywords="makeup portfolio, bridal makeup gallery, wedding makeup photos, ROM makeup, celebrity makeup, makeup artist work, before after makeup, bridal transformation"
+        title="Bridal Makeup Portfolio - Wedding & ROM Makeup Gallery Malaysia"
+        description="Browse Mae Liew's stunning portfolio of bridal makeup, wedding makeup, ROM makeup, and celebrity makeup transformations. Award-winning makeup artistry in Kuala Lumpur, Malaysia."
+        keywords="bridal makeup portfolio Malaysia, wedding makeup gallery KL, ROM makeup photos, celebrity makeup portfolio, makeup artist work Malaysia, bridal transformation, gambar makeup pengantin, portfolio artis solek"
         url="https://www.maeliewatelier.com/portfolio"
         image="https://www.maeliewatelier.com/images/portfolio/wd.webp"
       />

@@ -11,13 +11,14 @@ const Services: React.FC = () => {
   return (
     <SmoothPageTransition className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
       <SEO
-        title="Makeup Services - Bridal, Wedding & ROM Makeup"
-        description="Professional makeup services in Kuala Lumpur. Bridal makeup, wedding makeup, ROM makeup, and celebrity makeup by award-winning artist Mae Liew. Book your consultation today."
-        keywords="bridal makeup services, wedding makeup KL, ROM makeup, makeup services Malaysia, bridal makeup packages, wedding makeup artist, makeup consultation"
+        title="Bridal Makeup Services - Wedding, ROM & Celebrity Makeup Malaysia"
+        description="Professional bridal makeup services in Kuala Lumpur. Wedding makeup, ROM makeup, pre-wedding makeup, and celebrity makeup by Top 10 Malaysian Bridal Makeup Artist Mae Liew. Book your consultation today."
+        keywords="bridal makeup services Malaysia, wedding makeup package KL, ROM makeup Malaysia, pre-wedding makeup, actual day makeup, bridal trial makeup, makeup packages Malaysia, jurumakeup perkahwinan, makeup nikah dan sanding"
         url="https://www.maeliewatelier.com/services"
         image="https://www.maeliewatelier.com/images/general/wedding2.webp"
       />
       <StructuredData type="service" />
+      <StructuredData type="faqPage" />
       <div className="max-w-6xl mx-auto px-6 md:px-12">
 
         {/* Header */}

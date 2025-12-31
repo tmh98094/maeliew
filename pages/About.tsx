@@ -11,9 +11,9 @@ const About: React.FC = () => {
   return (
     <SmoothPageTransition className="w-full bg-[#fdfbf7]">
       <SEO
-        title="About Mae Liew - Award-Winning Makeup Artist"
-        description="Meet Mae Liew, Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. 20+ years experience, former MAC Cosmetics consultant and Shu Uemura brand instructor. Specializing in bridal, wedding, and celebrity makeup."
-        keywords="Mae Liew makeup artist, about Mae Liew, makeup artist biography, MAC Cosmetics, Shu Uemura, bridal makeup artist Malaysia, celebrity makeup artist"
+        title="About Mae Liew - Top 10 Malaysian Bridal Makeup Artist"
+        description="Meet Mae Liew, Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. 20+ years experience, former MAC Cosmetics consultant and Shu Uemura brand instructor. Award-winning bridal, wedding, and celebrity makeup artist in Kuala Lumpur."
+        keywords="Mae Liew makeup artist Malaysia, top bridal makeup artist KL, award-winning makeup artist, MAC Cosmetics consultant, Shu Uemura brand instructor, experienced wedding makeup artist, celebrity makeup artist Malaysia, artis solek terkenal Malaysia"
         url="https://www.maeliewatelier.com/about"
         image="https://www.maeliewatelier.com/images/about/mae.webp"
       />

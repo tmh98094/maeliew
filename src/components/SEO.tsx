@@ -18,7 +18,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({
   title = "Mae Liew Atelier - Top 10 Malaysian Bridal Makeup Artist",
   description = "Award-winning bridal makeup artist in Kuala Lumpur. Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. Specializing in wedding, ROM, and celebrity makeup with 20+ years experience.",
-  keywords = "bridal makeup artist Malaysia, wedding makeup KL, makeup artist Kuala Lumpur, bridal makeup, ROM makeup, celebrity makeup artist, Mae Liew, makeup artist Malaysia, wedding makeup artist, bridal beauty Malaysia",
+  keywords = "bridal makeup artist Malaysia, wedding makeup KL, makeup artist Kuala Lumpur, bridal makeup Malaysia, ROM makeup artist Malaysia, wedding makeup artist near me, best bridal makeup artist KL, professional makeup artist Malaysia, pre-wedding makeup Malaysia, actual day makeup artist Malaysia, bridal makeup and hair Malaysia, wedding makeup package Malaysia, chinese wedding makeup artist, indian bridal makeup Malaysia, malay wedding makeup artist, solemnization makeup Malaysia, engagement makeup artist KL, photoshoot makeup artist Malaysia, celebrity makeup artist Malaysia, luxury bridal makeup KL, makeup artist Selangor, bridal makeup Petaling Jaya, wedding makeup Bangsar, makeup artist Mont Kiara, bridal makeup Damansara, wedding makeup Subang Jaya, makeup artist Shah Alam, top 10 bridal makeup artist Malaysia, affordable bridal makeup KL, experienced wedding makeup artist, award-winning makeup artist Malaysia, bridal trial makeup Malaysia, destination wedding makeup Malaysia, hotel wedding makeup artist KL, morning call makeup artist Malaysia, artis solek pengantin Malaysia, makeup pengantin KL, jurumakeup perkahwinan, makeup nikah dan sanding, makeup pengantin profesional, Mae Liew",
   image = "https://www.maeliewatelier.com/images/about/mae.webp",
   url = "https://www.maeliewatelier.com",
   type = "website",
@@ -49,7 +49,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:url" content={fullUrl} />
       <meta property="og:site_name" content="Mae Liew Atelier" />
       <meta property="og:locale" content="en_MY" />
-      
+
       {/* Article specific */}
       {type === 'article' && (
         <>
@@ -74,26 +74,31 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       <meta name="googlebot" content="index, follow" />
       <meta name="bingbot" content="index, follow" />
-      
+
       {/* Geographic and Business Meta Tags */}
       <meta name="geo.region" content="MY-14" />
       <meta name="geo.placename" content="Kuala Lumpur" />
       <meta name="geo.position" content="3.139003;101.686855" />
       <meta name="ICBM" content="3.139003, 101.686855" />
-      
+
       {/* Mobile and Viewport */}
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#E63946" />
-      
+
       {/* Preconnect for Performance */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      
+
       {/* Favicon */}
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+
+      {/* Hreflang Tags for Malaysia Localization */}
+      <link rel="alternate" hrefLang="en-MY" href={fullUrl} />
+      <link rel="alternate" hrefLang="ms-MY" href={fullUrl} />
+      <link rel="alternate" hrefLang="x-default" href={fullUrl} />
     </Helmet>
   );
 };

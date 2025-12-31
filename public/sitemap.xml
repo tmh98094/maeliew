@@ -1,39 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
   <url>
     <loc>https://www.maeliewatelier.com</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.maeliewatelier.com/images/about/mae.webp</image:loc>
+      <image:title>Mae Liew - Top 10 Malaysian Bridal Makeup Artist</image:title>
+    </image:image>
   </url>
+  
+  <!-- About Page -->
   <url>
     <loc>https://www.maeliewatelier.com/about</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.maeliewatelier.com/images/about/mae.webp</image:loc>
+      <image:title>About Mae Liew - Professional Makeup Artist Malaysia</image:title>
+    </image:image>
   </url>
+  
+  <!-- Services Page -->
   <url>
     <loc>https://www.maeliewatelier.com/services</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.maeliewatelier.com/images/general/wedding2.webp</image:loc>
+      <image:title>Bridal Makeup Services Malaysia</image:title>
+    </image:image>
   </url>
+  
+  <!-- Portfolio Page -->
   <url>
     <loc>https://www.maeliewatelier.com/portfolio</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://www.maeliewatelier.com/images/portfolio/wd.webp</image:loc>
+      <image:title>Wedding Makeup Portfolio Malaysia</image:title>
+    </image:image>
   </url>
+  
+  <!-- Blog Page -->
   <url>
     <loc>https://www.maeliewatelier.com/blog</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- Contact Page -->
   <url>
     <loc>https://www.maeliewatelier.com/contact</loc>
-    <lastmod>2025-12-21</lastmod>
+    <lastmod>2025-12-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  
+  <!-- Blog Posts (11 total) -->
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/malaysian-wedding-makeup-trends-2026-whats-hot-this-year</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/wedding-day-timeline-coordinating-beauty-with-your-schedule</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/traditional-vs-modern-blending-heritage-and-contemporary-bridal-looks</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/makeup-trial-sessions-making-the-most-of-your-bridal-beauty-test-run</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/the-art-of-contouring-enhancing-your-natural-beauty-for-weddings</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/destination-wedding-makeup-tips-for-tropical-and-beach-ceremonies</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/malaysian-wedding-makeup-trends-2024-whats-hot-this-year</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/choosing-the-right-makeup-artist-what-every-bride-should-know</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/pre-wedding-photoshoot-makeup-creating-picture-perfect-moments</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/rom-ceremony-makeup-elegant-and-timeless-looks-for-your-special-day</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.maeliewatelier.com/blog/10-essential-bridal-makeup-tips-for-your-perfect-wedding-day</loc>
+    <lastmod>2025-12-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

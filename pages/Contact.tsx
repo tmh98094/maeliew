@@ -11,13 +11,14 @@ const Contact: React.FC = () => {
     <ToastProvider>
       <SmoothPageTransition className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
         <SEO
-          title="Contact Mae Liew Atelier - Book Your Makeup Consultation"
-          description="Contact Mae Liew Atelier for professional makeup services in Kuala Lumpur. Book your bridal makeup consultation, wedding makeup, or ROM makeup appointment. Call +6012-2681879 or email maeliew@gmail.com"
-          keywords="contact makeup artist, book makeup consultation, bridal makeup appointment, wedding makeup booking, Mae Liew contact, makeup artist KL contact"
+          title="Contact Mae Liew Atelier - Book Your Bridal Makeup Consultation Malaysia"
+          description="Contact Mae Liew Atelier for professional bridal makeup services in Kuala Lumpur. Book your wedding makeup, ROM makeup, or bridal trial appointment. Studio: Damansara, Kuala Lumpur. WhatsApp: +6012-2681879"
+          keywords="contact bridal makeup artist Malaysia, book wedding makeup KL, makeup consultation Malaysia, bridal appointment Kuala Lumpur, Mae Liew contact, makeup artist booking Damansara, tempah makeup pengantin"
           url="https://www.maeliewatelier.com/contact"
           image="https://www.maeliewatelier.com/images/about/mae.webp"
         />
         <StructuredData type="organization" />
+        <StructuredData type="localBusiness" />
         <div className="max-w-6xl mx-auto px-6 md:px-12">
 
           <div className="flex flex-col md:flex-row gap-16">

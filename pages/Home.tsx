@@ -159,13 +159,15 @@ const Home: React.FC = () => {
       <SEO
         title="Mae Liew Atelier - Top 10 Malaysian Bridal Makeup Artist"
         description="Award-winning bridal makeup artist in Kuala Lumpur. Top 10 Malaysian Bridal Makeup Artist by Marie France Asia. Specializing in wedding, ROM, and celebrity makeup with 20+ years experience."
-        keywords="bridal makeup artist Malaysia, wedding makeup KL, makeup artist Kuala Lumpur, bridal makeup, ROM makeup, celebrity makeup artist, Mae Liew, makeup artist Malaysia, wedding makeup artist, bridal beauty Malaysia"
+        keywords="bridal makeup artist Malaysia, wedding makeup KL, makeup artist Kuala Lumpur, bridal makeup Malaysia, ROM makeup artist Malaysia, best bridal makeup artist KL, chinese wedding makeup artist, malay wedding makeup artist, top 10 bridal makeup artist Malaysia, artis solek pengantin Malaysia, makeup pengantin KL"
         url="https://www.maeliewatelier.com"
         image="https://www.maeliewatelier.com/images/about/mae.webp"
       />
       <StructuredData type="organization" />
       <StructuredData type="person" />
       <StructuredData type="service" />
+      <StructuredData type="localBusiness" />
+      <StructuredData type="webSite" />
 
       {/* 1. HERO CAROUSEL */}
       <section className="h-[100vh] w-full relative overflow-hidden flex items-center justify-center">

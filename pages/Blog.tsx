@@ -97,11 +97,11 @@ const Blog: React.FC = () => {
   const loadBlogPosts = async () => {
     try {
       setLoading(true);
-      
+
       // Try to load blog posts from Supabase
-      const blogContent = await CRMService.getAllContent({ 
-        type: 'blog', 
-        status: 'published' 
+      const blogContent = await CRMService.getAllContent({
+        type: 'blog',
+        status: 'published'
       });
 
       if (blogContent && blogContent.length > 0) {
@@ -111,21 +111,21 @@ const Blog: React.FC = () => {
           title: content.title,
           slug: titleToSlug(content.title),
           category: content.category_name || 'Blog',
-          date: content.published_at 
-            ? new Date(content.published_at).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })
-            : new Date(content.created_at).toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              }),
+          date: content.published_at
+            ? new Date(content.published_at).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })
+            : new Date(content.created_at).toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            }),
           image: content.file_path || WEDDING_IMAGES[index % WEDDING_IMAGES.length],
           excerpt: content.description ? content.description.substring(0, 200) + '...' : 'Read more about this topic...'
         }));
-        
+
         setAllBlogPosts(formattedPosts);
       } else {
         // No blog posts found, use fallback
@@ -173,31 +173,31 @@ const Blog: React.FC = () => {
 
   return (
     <div className="pt-32 pb-24 min-h-screen bg-[#fdfbf7]">
-      <SEO 
-        title="Beauty & Wedding Blog - Makeup Tips & Trends"
-        description="Discover the latest bridal makeup trends, wedding beauty tips, and professional makeup advice from Mae Liew. Expert insights on bridal beauty, makeup techniques, and wedding preparation."
-        keywords="bridal makeup blog, wedding beauty tips, makeup trends, bridal beauty advice, wedding makeup tips, makeup tutorials, bridal preparation, beauty blog Malaysia"
+      <SEO
+        title="Wedding Makeup Blog - Bridal Beauty Tips & Trends Malaysia"
+        description="Discover the latest bridal makeup trends, wedding beauty tips, and professional makeup advice from Mae Liew. Expert insights on bridal beauty, makeup techniques, and wedding preparation for Malaysian brides."
+        keywords="bridal makeup blog Malaysia, wedding beauty tips KL, makeup trends 2025, bridal preparation guide, wedding makeup advice, skincare bride tips, tip kecantikan pengantin, blog makeup kahwin"
         url="https://www.maeliewatelier.com/blog"
         image="https://www.maeliewatelier.com/images/about/mae.webp"
       />
       <div className="max-w-5xl mx-auto px-6 md:px-12">
-        
+
         <div className="text-center mb-24">
-           <motion.p 
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             className="text-gray-500 uppercase tracking-widest text-xs mb-4"
-           >
-             The Atelier Journal
-           </motion.p>
-           <motion.h1 
-             initial={{ opacity: 0, y: 20 }}
-             animate={{ opacity: 1, y: 0 }}
-             transition={{ delay: 0.1 }}
-             className="font-serif text-5xl md:text-7xl"
-           >
-             Beauty Insights
-           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-gray-500 uppercase tracking-widest text-xs mb-4"
+          >
+            The Atelier Journal
+          </motion.p>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="font-serif text-5xl md:text-7xl"
+          >
+            Beauty Insights
+          </motion.h1>
         </div>
 
         {allBlogPosts.length === 0 ? (
@@ -209,37 +209,37 @@ const Blog: React.FC = () => {
           <>
             <div className="grid grid-cols-1 gap-20">
               {currentPosts.map((post, index) => (
-              <Link to={`/blog/${post.slug}`} key={post.id}>
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="group cursor-pointer flex flex-col md:flex-row gap-8 md:gap-16 items-start"
-                >
-                <div className="w-full md:w-1/2 aspect-video overflow-hidden bg-gray-200">
-                   <img 
-                     src={post.image} 
-                     alt={post.title} 
-                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                   />
-                </div>
-                <div className="w-full md:w-1/2 pt-4">
-                   <div className="flex items-center gap-4 text-xs uppercase tracking-widest text-gray-400 mb-4">
-                      <span className="text-[#E63946] font-bold">{post.category}</span>
-                      <span>•</span>
-                      <span>{post.date}</span>
-                   </div>
-                   <h2 className="font-serif text-3xl md:text-4xl mb-6 leading-tight group-hover:text-[#E63946] transition-colors">
-                     {post.title}
-                   </h2>
-                   <p className="text-gray-600 font-light leading-relaxed mb-6">
-                     {post.excerpt}
-                   </p>
-                   <span className="text-xs uppercase tracking-widest border-b border-black pb-1 group-hover:border-[#E63946] group-hover:text-[#E63946] transition-all">Read Article</span>
-                </div>
-                </motion.div>
-              </Link>
+                <Link to={`/blog/${post.slug}`} key={post.id}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="group cursor-pointer flex flex-col md:flex-row gap-8 md:gap-16 items-start"
+                  >
+                    <div className="w-full md:w-1/2 aspect-video overflow-hidden bg-gray-200">
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="w-full md:w-1/2 pt-4">
+                      <div className="flex items-center gap-4 text-xs uppercase tracking-widest text-gray-400 mb-4">
+                        <span className="text-[#E63946] font-bold">{post.category}</span>
+                        <span>•</span>
+                        <span>{post.date}</span>
+                      </div>
+                      <h2 className="font-serif text-3xl md:text-4xl mb-6 leading-tight group-hover:text-[#E63946] transition-colors">
+                        {post.title}
+                      </h2>
+                      <p className="text-gray-600 font-light leading-relaxed mb-6">
+                        {post.excerpt}
+                      </p>
+                      <span className="text-xs uppercase tracking-widest border-b border-black pb-1 group-hover:border-[#E63946] group-hover:text-[#E63946] transition-all">Read Article</span>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
             </div>
 
@@ -253,11 +253,10 @@ const Blog: React.FC = () => {
                 <button
                   onClick={() => handlePageChange(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className={`flex items-center gap-2 px-4 py-2 rounded transition-colors ${
-                    currentPage === 1
+                  className={`flex items-center gap-2 px-4 py-2 rounded transition-colors ${currentPage === 1
                       ? 'text-gray-400 cursor-not-allowed'
                       : 'text-gray-600 hover:text-[#E63946] hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   <ChevronLeft size={20} />
                   Previous
@@ -268,11 +267,10 @@ const Blog: React.FC = () => {
                     <button
                       key={page}
                       onClick={() => handlePageChange(page)}
-                      className={`w-10 h-10 rounded transition-colors ${
-                        currentPage === page
+                      className={`w-10 h-10 rounded transition-colors ${currentPage === page
                           ? 'bg-[#E63946] text-white'
                           : 'text-gray-600 hover:text-[#E63946] hover:bg-gray-50'
-                      }`}
+                        }`}
                     >
                       {page}
                     </button>
@@ -282,11 +280,10 @@ const Blog: React.FC = () => {
                 <button
                   onClick={() => handlePageChange(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className={`flex items-center gap-2 px-4 py-2 rounded transition-colors ${
-                    currentPage === totalPages
+                  className={`flex items-center gap-2 px-4 py-2 rounded transition-colors ${currentPage === totalPages
                       ? 'text-gray-400 cursor-not-allowed'
                       : 'text-gray-600 hover:text-[#E63946] hover:bg-gray-50'
-                  }`}
+                    }`}
                 >
                   Next
                   <ChevronRight size={20} />
