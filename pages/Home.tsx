@@ -8,6 +8,7 @@ import InstagramGallery from '../src/components/InstagramGallery';
 import StatsCards from '../src/components/StatsCards';
 import AnimatedFeaturedShowreel from '../src/components/AnimatedFeaturedShowreel';
 import PartnersGrid from '../src/components/PartnersGrid';
+import FeaturedPortfolioSection from '../src/components/FeaturedPortfolioSection';
 import SEO from '../src/components/SEO';
 import StructuredData from '../src/components/StructuredData';
 
@@ -202,7 +203,7 @@ const Home: React.FC = () => {
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
             <p className="text-xs md:text-sm tracking-[0.4em] uppercase font-light mb-6">Est. 2008 • Kuala Lumpur</p>
             <h1 className="font-serif text-5xl md:text-8xl lg:text-9xl tracking-tighter leading-none mb-8">
-              The Art of <br /> <span className="italic font-light">Timeless Beauty</span>
+              Mae Liew <br /> <span className="italic font-light">Make Up Artist</span>
             </h1>
           </motion.div>
         </div>
@@ -413,6 +414,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Featured Portfolio Section */}
+      <FeaturedPortfolioSection className="bg-[#fdfbf7]" />
 
       {/* 6. ENHANCED TESTIMONIALS */}
       <EnhancedTestimonials />

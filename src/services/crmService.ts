@@ -35,6 +35,7 @@ export class CRMService {
     type?: ContentType
     categoryId?: string
     projectId?: string
+    orderBy?: 'created_at' | 'sort_order'
   }) {
     const client = this.checkSupabase()
     
@@ -47,7 +48,6 @@ export class CRMService {
         category_color:categories(color),
         project_name:projects(name)
       `)
-      .order('created_at', { ascending: false })
 
     // Apply filters
     if (options?.status) {
@@ -62,6 +62,10 @@ export class CRMService {
     if (options?.projectId) {
       query = query.eq('project_id', options.projectId)
     }
+
+    // Apply ordering - default to sort_order for images, created_at for others
+    const orderBy = options?.orderBy || (options?.type === 'image' ? 'sort_order' : 'created_at')
+    query = query.order(orderBy, { ascending: orderBy === 'sort_order' })
 
     // Apply pagination
     const limit = options?.limit || 50
@@ -140,6 +144,86 @@ export class CRMService {
       search_term: searchTerm,
       limit_count: limit
     })
+
+    if (error) throw error
+    return data
+  }
+
+  // Sort Order Management
+  static async updateSortOrder(id: string, sortOrder: number) {
+    const client = this.checkSupabase()
+    const { data, error } = await client
+      .from('content')
+      .update({ sort_order: sortOrder })
+      .eq('id', id)
+      .select()
+      .single()
+
+    if (error) throw error
+    return data
+  }
+
+  static async updateBatchSortOrder(items: { id: string; sort_order: number }[]) {
+    const client = this.checkSupabase()
+    
+    // Use Promise.all for batch updates
+    const updates = items.map(item =>
+      client
+        .from('content')
+        .update({ sort_order: item.sort_order })
+        .eq('id', item.id)
+    )
+
+    const results = await Promise.all(updates)
+    const errors = results.filter(r => r.error)
+    
+    if (errors.length > 0) {
+      throw new Error(`Failed to update ${errors.length} items`)
+    }
+  }
+
+  // Featured Content Management
+  static async getFeaturedContent(type?: ContentType) {
+    const client = this.checkSupabase()
+    
+    let query = client
+      .from('content')
+      .select(`
+        *,
+        category_name:categories(name),
+        category_color:categories(color),
+        project_name:projects(name)
+      `)
+      .eq('is_featured', true)
+      .eq('status', 'published')
+      .order('sort_order', { ascending: true })
+
+    if (type) {
+      query = query.eq('type', type)
+    }
+
+    const { data, error } = await query
+
+    if (error) throw error
+    
+    const transformedData = data?.map(item => ({
+      ...item,
+      category_name: item.category_name?.[0]?.name || null,
+      category_color: item.category_color?.[0]?.color || null,
+      project_name: item.project_name?.[0]?.name || null
+    })) || []
+
+    return transformedData as Content[]
+  }
+
+  static async toggleFeatured(id: string, isFeatured: boolean) {
+    const client = this.checkSupabase()
+    const { data, error } = await client
+      .from('content')
+      .update({ is_featured: isFeatured })
+      .eq('id', id)
+      .select()
+      .single()
 
     if (error) throw error
     return data

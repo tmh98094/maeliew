@@ -61,6 +61,8 @@ export interface Content {
   project_id?: string
   view_count: number
   download_count: number
+  sort_order: number
+  is_featured: boolean
   created_at: string
   updated_at: string
   published_at?: string

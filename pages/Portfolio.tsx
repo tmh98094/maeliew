@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'react-router-dom';
 
 import { LazyComponent } from '../src/components/PerformanceOptimizer';
 import { SmoothPageTransition } from '../src/components/AdvancedUIComponents';
@@ -10,23 +11,27 @@ import SEO from '../src/components/SEO';
 import StructuredData from '../src/components/StructuredData';
 
 const Portfolio: React.FC = () => {
+  const [searchParams] = useSearchParams();
   const [portfolioContent, setPortfolioContent] = useState<Content[]>([]);
   const [filteredContent, setFilteredContent] = useState<Content[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [loading, setLoading] = useState(true);
   const [selectedImage, setSelectedImage] = useState<Content | null>(null);
+  const isFeaturedFilter = searchParams.get('filter') === 'featured';
 
   useEffect(() => {
     const loadPortfolio = async () => {
       try {
         // Fetch published content from Supabase
         const [content, cats] = await Promise.all([
-          CRMService.getAllContent({
-            type: 'image',
-            status: 'published',
-            limit: 100
-          }),
+          isFeaturedFilter
+            ? CRMService.getFeaturedContent('image')
+            : CRMService.getAllContent({
+              type: 'image',
+              status: 'published',
+              limit: 100
+            }),
           CRMService.getAllCategories()
         ]);
         setPortfolioContent(content || []);
@@ -44,7 +49,7 @@ const Portfolio: React.FC = () => {
     };
 
     loadPortfolio();
-  }, []);
+  }, [isFeaturedFilter]);
 
   useEffect(() => {
     if (selectedCategory === 'all') {
@@ -71,7 +76,7 @@ const Portfolio: React.FC = () => {
 
   return (
     <SmoothPageTransition className="pt-32 pb-24 min-h-screen">
-      <SEO 
+      <SEO
         title="Portfolio - Wedding & Bridal Makeup Gallery"
         description="Browse Mae Liew's stunning portfolio of bridal makeup, wedding makeup, ROM makeup, and celebrity makeup work. Award-winning makeup artistry showcased through beautiful transformations."
         keywords="makeup portfolio, bridal makeup gallery, wedding makeup photos, ROM makeup, celebrity makeup, makeup artist work, before after makeup, bridal transformation"
@@ -80,20 +85,23 @@ const Portfolio: React.FC = () => {
       />
       <div className="px-4 md:px-8">
         <div className="text-center mb-12">
-           <h1 className="font-serif text-5xl md:text-7xl">Portfolio</h1>
-           <p className="mt-4 text-gray-500 uppercase tracking-widest text-sm">A curation of beauty</p>
+          <h1 className="font-serif text-5xl md:text-7xl">
+            {isFeaturedFilter ? 'Featured Portfolio' : 'Portfolio'}
+          </h1>
+          <p className="mt-4 text-gray-500 uppercase tracking-widest text-sm">
+            {isFeaturedFilter ? 'Our spotlight collection' : 'A curation of beauty'}
+          </p>
         </div>
 
-        {/* Category Filters */}
-        {categories.length > 0 && (
+        {/* Category Filters - Hide on featured page */}
+        {!isFeaturedFilter && categories.length > 0 && (
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-6 py-2 rounded-full transition-all ${
-                selectedCategory === 'all'
-                  ? 'bg-black text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+              className={`px-6 py-2 rounded-full transition-all ${selectedCategory === 'all'
+                ? 'bg-black text-white'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
             >
               All
             </button>
@@ -101,11 +109,10 @@ const Portfolio: React.FC = () => {
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-6 py-2 rounded-full transition-all ${
-                  selectedCategory === category.id
-                    ? 'bg-black text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+                className={`px-6 py-2 rounded-full transition-all ${selectedCategory === category.id
+                  ? 'bg-black text-white'
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                  }`}
                 style={{
                   backgroundColor: selectedCategory === category.id ? category.color : undefined,
                   color: selectedCategory === category.id ? '#fff' : undefined
@@ -138,16 +145,16 @@ const Portfolio: React.FC = () => {
                 >
                   {/* Fixed aspect ratio container - smaller on mobile */}
                   <div className="aspect-square overflow-hidden">
-                    <img 
-                      src={item.file_path} 
-                      alt={item.alt_text || item.title} 
+                    <img
+                      src={item.file_path}
+                      alt={item.alt_text || item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x400?text=Image+Not+Found';
                       }}
                     />
                   </div>
-                  
+
                   {/* Subtle hover effect */}
                   <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">View</span>
@@ -172,7 +179,7 @@ const Portfolio: React.FC = () => {
                   >
                     <X size={32} />
                   </button>
-                  
+
                   <motion.img
                     initial={{ scale: 0.9, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}

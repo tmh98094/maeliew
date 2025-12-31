@@ -31,8 +31,13 @@ const EnhancedNavbar: React.FC = () => {
     setIsOpen(false);
   }, [location]);
 
+  // Only show white text on homepage hero (at top)
+  const isHomePage = location.pathname === '/';
+  const shouldUseWhiteText = isHomePage && !isScrolled;
+
   const navLinks = [
     { name: 'Home', path: '/' },
+    { name: 'Featured', path: '/portfolio?filter=featured' },
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
@@ -60,7 +65,7 @@ const EnhancedNavbar: React.FC = () => {
         <div className="flex justify-between items-center px-6 md:px-12">
           <Link to="/" className="z-50 group">
             <motion.div
-              className={`font-display text-2xl md:text-4xl tracking-tight font-bold ${isScrolled ? 'text-warm-gray' : 'text-white drop-shadow-lg'}`}
+              className={`font-display text-2xl md:text-4xl tracking-tight font-bold ${shouldUseWhiteText ? 'text-white drop-shadow-lg' : 'text-black'}`}
               whileHover={{ scale: 1.05 }}
             >
               MaeLiew Atelier
@@ -78,7 +83,8 @@ const EnhancedNavbar: React.FC = () => {
               >
                 <Link
                   to={link.path}
-                  className={`uppercase text-xs tracking-[0.3em] hover:text-accent-red transition-all duration-300 relative group font-medium ${isScrolled ? 'text-warm-gray' : 'text-white drop-shadow-md'}`}
+                  className={`text-sm uppercase tracking-[0.2em] font-medium transition-all duration-300 hover:text-rose-600 ${shouldUseWhiteText ? 'text-white' : 'text-black'
+                    }`}
                 >
                   {link.name}
                   <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-gradient-to-r from-accent-red to-muted-gold transition-all duration-300 group-hover:w-full"></span>
@@ -100,7 +106,7 @@ const EnhancedNavbar: React.FC = () => {
               {isOpen ? (
                 <X size={24} color="white" />
               ) : (
-                <Menu size={24} color={isScrolled ? "#0f0f0f" : "white"} />
+                <Menu size={24} color={shouldUseWhiteText ? "white" : "#0f0f0f"} />
               )}
             </motion.div>
           </motion.button>

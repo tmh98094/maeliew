@@ -104,14 +104,6 @@ const Services: React.FC = () => {
           </div>
         </div>
 
-        <div className="text-center mt-24">
-          <Link to="/contact">
-            <button className="bg-black text-white px-10 py-4 uppercase tracking-widest text-sm hover:bg-[#E63946] transition-colors">
-              Book Your Consultation
-            </button>
-          </Link>
-        </div>
-
       </div>
 
       {/* Service Process Details */}
