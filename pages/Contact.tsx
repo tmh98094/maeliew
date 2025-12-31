@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="mt-24 w-full h-80 overflow-hidden relative grayscale">
-            <img src="/images/services/visitatelier.jpeg" alt="Visit the Atelier" className="w-full h-full object-cover" />
+            <img src="/images/visitatelier.jpeg" alt="Visit the Atelier" className="w-full h-full object-cover" />
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               <span className="text-white font-serif text-3xl">Visit the Atelier</span>
             </div>
