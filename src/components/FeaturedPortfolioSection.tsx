@@ -150,14 +150,38 @@ const FeaturedPortfolioSection: React.FC<FeaturedPortfolioSectionProps> = ({ cla
                             animate={isInView ? { opacity: 1 } : {}}
                             transition={{ duration: 0.8, delay: 0.2 }}
                         >
+                            {/* Mobile: Show all items in carousel */}
+                            <div className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 no-scrollbar">
+                                {featuredItems.map((item, index) => (
+                                    <motion.div
+                                        key={item.id}
+                                        className="min-w-[85vw] snap-center"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    >
+                                        <div className="group relative aspect-[3/4] bg-gray-100 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                                            <img
+                                                src={item.file_path || '/images/placeholder.webp'}
+                                                alt={item.alt_text || item.title}
+                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                                                onError={(e) => {
+                                                    (e.target as HTMLImageElement).src = '/images/placeholder.webp';
+                                                }}
+                                            />
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Desktop: Show paginated grid */}
                             <div
                                 ref={scrollRef}
-                                className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 pb-4 md:pb-0 no-scrollbar"
+                                className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6"
                             >
                                 {currentPageItems.map((item, index) => (
                                     <motion.div
                                         key={item.id}
-                                        className="min-w-[85vw] md:min-w-0 snap-center"
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -177,9 +201,9 @@ const FeaturedPortfolioSection: React.FC<FeaturedPortfolioSectionProps> = ({ cla
                             </div>
                         </motion.div>
 
-                        {/* Page Indicators */}
+                        {/* Page Indicators - Desktop Only */}
                         {totalPages > 1 && (
-                            <div className="flex justify-center items-center gap-3 mt-8">
+                            <div className="hidden md:flex justify-center items-center gap-3 mt-8">
                                 {Array.from({ length: totalPages }).map((_, index) => (
                                     <button
                                         key={index}
