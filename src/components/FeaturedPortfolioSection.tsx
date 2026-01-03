@@ -152,11 +152,12 @@ const FeaturedPortfolioSection: React.FC<FeaturedPortfolioSectionProps> = ({ cla
                         >
                             <div
                                 ref={scrollRef}
-                                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+                                className="flex overflow-x-auto snap-x snap-mandatory gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-6 pb-4 md:pb-0 no-scrollbar"
                             >
                                 {currentPageItems.map((item, index) => (
                                     <motion.div
                                         key={item.id}
+                                        className="min-w-[85vw] md:min-w-0 snap-center"
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -170,30 +171,6 @@ const FeaturedPortfolioSection: React.FC<FeaturedPortfolioSectionProps> = ({ cla
                                                     (e.target as HTMLImageElement).src = '/images/placeholder.webp';
                                                 }}
                                             />
-
-                                            {/* Gradient Overlay */}
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-                                            {/* Content Overlay */}
-                                            <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                                                <div className="flex items-center gap-2 mb-2">
-                                                    <Star size={12} className="text-yellow-400" fill="currentColor" />
-                                                    <span className="text-white/80 text-xs uppercase tracking-wider">Featured</span>
-                                                </div>
-                                                <h3 className="text-white font-serif text-lg md:text-xl line-clamp-2">
-                                                    {item.title}
-                                                </h3>
-                                                {item.category_name && (
-                                                    <p className="text-white/70 text-sm mt-1">{item.category_name}</p>
-                                                )}
-                                            </div>
-
-                                            {/* Featured Badge */}
-                                            <div className="absolute top-3 right-3">
-                                                <span className="px-2 py-1 bg-yellow-400/90 text-yellow-900 text-xs font-bold rounded-full flex items-center gap-1">
-                                                    <Star size={10} fill="currentColor" />
-                                                </span>
-                                            </div>
                                         </div>
                                     </motion.div>
                                 ))}
